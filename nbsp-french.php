@@ -9,7 +9,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.0
  * Tested Up To: 4.4
- * Version: 1.5.2
+ * Version: 1.5.3
  * 
  * This script is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
