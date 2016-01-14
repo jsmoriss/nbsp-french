@@ -53,6 +53,19 @@ The plugin will add non-breaking spaces where appropriate in the content, excerp
 
 == Changelog ==
 
+= Version 1.6.0 (2016/01/14) =
+
+* **New Features**
+	* Added a hook for 'the_title' filter.
+* **Improvements**
+	* *None*
+* **Bugfixes**
+	* *None*
+* **Developer Notes**
+	* Moved the nbsp_french_filter() function to a NbspFrench::filter() static method.
+
+= Version 1.5.2 =
+
 = Version 1.5.3 (2016/01/08) =
 
 * **New Features**
@@ -76,6 +89,10 @@ The plugin will add non-breaking spaces where appropriate in the content, excerp
 	* *None*
 
 == Upgrade Notice ==
+
+= 1.6.0 =
+
+2016/01/14 - Added a hook for 'the_title' filter. Moved the nbsp_french_filter() function to a NbspFrench::filter() static method.
 
 = 1.5.3 =
 
