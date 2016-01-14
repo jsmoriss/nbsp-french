@@ -50,6 +50,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				'the_content',
 				'the_excerpt',
 				'comment_text',
+				'widget_title',
 				'widget_text',
 			) as $filter_name ) {
 				if ( apply_filters( 'nbsp_french_filter_'.$filter_name, true ) )

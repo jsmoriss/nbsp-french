@@ -56,7 +56,7 @@ The plugin will add non-breaking spaces where appropriate in the content, excerp
 = Version 1.6.0 (2016/01/14) =
 
 * **New Features**
-	* Added a hook for 'the_title' filter.
+	* Added hooks for 'the_title' and 'widget_title' filters.
 * **Improvements**
 	* *None*
 * **Bugfixes**
