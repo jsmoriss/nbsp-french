@@ -1,7 +1,7 @@
 === JSM's Non-Breaking Space for French Content ===
 Plugin Name: JSM's Non-Breaking Space for French Content
 Plugin Slug: nbsp-french
-Contributors: JS Morisset
+Contributors: jsmoriss
 Tags: nbsp, french, exclamation, question, interrogation, line-break
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
