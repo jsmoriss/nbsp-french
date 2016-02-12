@@ -51,42 +51,59 @@ The plugin will add non-breaking spaces where appropriate in the content, excerp
 
 == Frequently Asked Questions ==
 
+= Frequently Asked Questions =
+
+* None
+
+== Other Notes ==
+
+= Additional Documentation =
+
+* None
+
+== Screenshots ==
+
 == Changelog ==
 
-= Version 1.6.0 (2016/01/14) =
+= Repositories =
 
-* **New Features**
+* [GitHub](https://github.com/jsmoriss/nbsp-french)
+* [WordPress.org](https://wordpress.org/plugins/nbsp-french/developers/)
+
+= Changelog / Release Notes =
+
+**Version 1.6.0 (2016/01/14)**
+
+* *New Features*
 	* Added hooks for 'the_title' and 'widget_title' filters.
-* **Improvements**
-	* *None*
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
 	* Moved the nbsp_french_filter() function to a NbspFrench::filter() static method.
 
-= Version 1.5.2 =
+**Version 1.5.3 (2016/01/08)**
 
-= Version 1.5.3 (2016/01/08) =
-
-* **New Features**
-	* *None*
-* **Improvements**
+* *New Features*
+	* None
+* *Improvements*
 	* Updated the plugin name and assets (icons and banner).
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* *None*
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
 
-= Version 1.5.2 =
+**Version 1.5.2**
 
-* **New Features**
+* *New Features*
 	* Added support for an optional NBSP_FRENCH_FILTER_PRIORITY constant to change the default filter hook priority (default is 10).
-* **Improvements**
-	* *None*
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* *None*
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
 
 == Upgrade Notice ==
 
