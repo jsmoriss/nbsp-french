@@ -83,35 +83,9 @@ The plugin will add non-breaking spaces where appropriate in the content, excerp
 * *Developer Notes*
 	* Moved the nbsp_french_filter() function to a NbspFrench::filter() static method.
 
-**Version 1.5.3 (2016/01/08)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Updated the plugin name and assets (icons and banner).
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
-**Version 1.5.2**
-
-* *New Features*
-	* Added support for an optional NBSP_FRENCH_FILTER_PRIORITY constant to change the default filter hook priority (default is 10).
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
-
 == Upgrade Notice ==
 
 = 1.6.0 =
 
 2016/01/14 - Added a hook for 'the_title' filter. Moved the nbsp_french_filter() function to a NbspFrench::filter() static method.
-
-= 1.5.3 =
-
-2016/01/08 - Updated the plugin name and assets (icons and banner).
 
