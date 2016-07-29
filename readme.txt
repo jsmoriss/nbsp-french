@@ -87,5 +87,5 @@ The plugin will add non-breaking spaces where appropriate in the content, excerp
 
 = 1.6.0 =
 
-2016/01/14 - Added a hook for 'the_title' filter. Moved the nbsp_french_filter() function to a NbspFrench::filter() static method.
+(2016/01/14) Added a hook for 'the_title' filter. Moved the nbsp_french_filter() function to a NbspFrench::filter() static method.
 
