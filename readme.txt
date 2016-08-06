@@ -25,6 +25,14 @@ Adds a non-breaking space between words and punctuation marks to avoid inappropr
 
 The plugin will add non-breaking spaces where appropriate in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks and scripts &mdash; and if the `<!--:fr-->` HTML  tag is found, non-breaking spaces are only added between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
+= Developer Filters =
+
+*'nbsp_french_filter_priority' ( $filter_prio )* &mdash; The default filter priority (default: 10).
+
+*'nbsp_french_add_filters' ( $filter_list )* &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).
+
+*'nbsp_french_filter_'.$filter_name ( $bool )* &mdash; Hook the filter name (default: true).
+
 == Installation ==
 
 = Automated Install =
@@ -72,7 +80,7 @@ The plugin will add non-breaking spaces where appropriate in the content, excerp
 
 = Changelog / Release Notes =
 
-**Version 1.6.0-1 (2016/08/02)**
+**Version 1.6.1-1 (2016/08/06)**
 
 Maintenance release.
 
@@ -83,11 +91,11 @@ Maintenance release.
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Added the 'nbsp_french_add_filters' filter.
 
 == Upgrade Notice ==
 
-= 1.6.0-1 =
+= 1.6.1-1 =
 
-(2016/08/02) Maintenance release.
+(2016/08/06) Added the 'nbsp_french_add_filters' filter.
 

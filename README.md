@@ -27,6 +27,14 @@
 
 <p>The plugin will add non-breaking spaces where appropriate in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks and scripts &mdash; and if the <code>&lt;!--:fr--&gt;</code> HTML  tag is found, non-breaking spaces are only added between the <code>&lt;!--:fr--&gt;</code> and <code>&lt;!--:--&gt;</code> HTML tags.</p>
 
+<h4>Developer Filters</h4>
+
+<p><em>'nbsp_french_filter_priority' ( $filter_prio )</em> &mdash; The default filter priority (default: 10).</p>
+
+<p><em>'nbsp_french_add_filters' ( $filter_list )</em> &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).</p>
+
+<p><em>'nbsp_french_filter_'.$filter_name ( $bool )</em> &mdash; Hook the filter name (default: true).</p>
+
 
 <h2>Installation</h2>
 
