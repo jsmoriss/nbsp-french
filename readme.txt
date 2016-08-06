@@ -7,13 +7,15 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
 Requires At Least: 3.0
 Tested Up To: 4.6
-Stable Tag: 1.6.0-1
+Stable Tag: 1.6.1-1
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
 
 == Description ==
 
-Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French. Recognized punctuation:
+This plugin will add non-breaking spaces where appropriate in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks and scripts &mdash; and if the `<!--:fr-->` HTML  tag is found, non-breaking spaces will be added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
+
+= Recognized Punctuation =
 
 * !
 * ?
@@ -22,8 +24,6 @@ Adds a non-breaking space between words and punctuation marks to avoid inappropr
 * %
 * &laquo;
 * &raquo;
-
-The plugin will add non-breaking spaces where appropriate in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks and scripts &mdash; and if the `<!--:fr-->` HTML  tag is found, non-breaking spaces are only added between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
 = Developer Filters =
 
