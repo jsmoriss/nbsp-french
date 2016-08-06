@@ -35,6 +35,12 @@
 
 <p><em>'nbsp_french_filter_'.$filter_name ( $bool )</em> &mdash; Hook the filter name (default: true).</p>
 
+<p>Hook additioonal text filters by including their names in the 'nbsp_french_add_filters' array (see above), or hook filters individually in your functions.php file:</p>
+
+<pre>
+add_filter( $filter_name, array( NbspFrench, 'filter' ) );
+</pre>
+
 
 <h2>Installation</h2>
 
