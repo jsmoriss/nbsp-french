@@ -9,7 +9,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.0
  * Tested Up To: 4.6
- * Version: 1.6.0-1
+ * Version: 1.6.1-1
  * 
  * This script is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -41,20 +41,20 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 		public function __construct() {
 
-			$prio = apply_filters( 'nbsp_french_filter_priority', 
+			$filter_prio = apply_filters( 'nbsp_french_filter_priority', 
 				( defined( 'NBSP_FRENCH_FILTER_PRIORITY' ) ? 
 					NBSP_FRENCH_FILTER_PRIORITY : 10 ) );
 
-			foreach ( array( 
+			foreach ( apply_filters( 'nbsp_french_add_filters', array( 
 				'the_title',
 				'the_content',
 				'the_excerpt',
 				'comment_text',
 				'widget_title',
 				'widget_text',
-			) as $filter_name ) {
+			) ) as $filter_name ) {
 				if ( apply_filters( 'nbsp_french_filter_'.$filter_name, true ) )
-					add_filter( $filter_name, array( __CLASS__, 'filter' ), $prio );
+					add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
 			}
 		}
 
