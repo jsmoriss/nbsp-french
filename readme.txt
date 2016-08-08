@@ -37,10 +37,10 @@ This plugin will add non-breaking spaces where appropriate in the content, excer
 
 *'nbsp_french_filter_'.$filter_name ( $bool )* &mdash; Hook the filter name (default: true).
 
-Hook additioonal text filters by including their names in the 'nbsp_french_add_filters' array (see above), or hook filters individually in your functions.php file:
+Hook additional text filters by including their names in the 'nbsp_french_add_filters' array (see above), or hook filters individually in your functions.php file:
 
 <pre>
-add_filter( $filter_name, array( NbspFrench, 'filter' ) );
+add_filter( $filter_name, array( 'NbspFrench', 'filter' ) );
 </pre>
 
 == Installation ==
