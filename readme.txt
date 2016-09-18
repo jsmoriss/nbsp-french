@@ -35,11 +35,11 @@ This plugin will add non-breaking spaces where appropriate in the content, excer
 
 *'nbsp_french_add_filters' ( array $names )* &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).
 
-*'nbsp_french_filter_'.$filter_name ( $bool )* &mdash; Hook the filter name (default: true).
+*'nbsp_french_filter_'.$name ( $bool )* &mdash; Hook the filter name (default: true).
 
-*'nbsp_french_preg_pattern ( array $pattern )* &mdash; An array of patterns to match.
+*'nbsp_french_preg_pattern' ( array $pattern )* &mdash; An array of patterns to match.
 
-*'nbsp_french_preg_replace ( array $replace )* &mdash; An array of replacement strings.
+*'nbsp_french_preg_replace' ( array $replace )* &mdash; An array of replacement strings.
 
 To hook additional text filters, include their names in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
 
