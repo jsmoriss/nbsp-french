@@ -10,8 +10,8 @@ Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
 Tags: nbsp, french, exclamation, question, interrogation, line-break
 Contributors: jsmoriss
 Requires At Least: 3.0
-Tested Up To: 4.6
-Stable Tag: 1.6.1-1
+Tested Up To: 4.6.1
+Stable Tag: 1.7.0-1
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
 
@@ -31,13 +31,17 @@ This plugin will add non-breaking spaces where appropriate in the content, excer
 
 = Developer Filters =
 
-*'nbsp_french_filter_priority' ( $filter_prio )* &mdash; The default filter priority (default: 10).
+*'nbsp_french_filter_priority' ( $priority )* &mdash; The default filter priority (default: 10).
 
-*'nbsp_french_add_filters' ( $filter_list )* &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).
+*'nbsp_french_add_filters' ( array $names )* &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).
 
 *'nbsp_french_filter_'.$filter_name ( $bool )* &mdash; Hook the filter name (default: true).
 
-Hook additional text filters by including their names in the 'nbsp_french_add_filters' array (see above), or hook filters individually in your functions.php file:
+*'nbsp_french_preg_pattern ( array $pattern )* &mdash; An array of patterns to match.
+
+*'nbsp_french_preg_replace ( array $replace )* &mdash; An array of replacement strings.
+
+To hook additional text filters, include their names in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
 
 <pre>
 add_filter( $filter_name, array( 'NbspFrench', 'filter' ) );
@@ -90,6 +94,19 @@ add_filter( $filter_name, array( 'NbspFrench', 'filter' ) );
 
 = Changelog / Release Notes =
 
+**Version 1.7.0-1 (2016/09/18)**
+
+Maintenance release.
+
+* *New Features*
+	* Added support for punctuation marks preceding a "&raquo;" character (props @janvitos).
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added the 'nbsp_french_preg_pattern' and 'nbsp_french_preg_replace' filters.
+
 **Version 1.6.1-1 (2016/08/06)**
 
 Maintenance release.
@@ -104,6 +121,10 @@ Maintenance release.
 	* Added the 'nbsp_french_add_filters' filter.
 
 == Upgrade Notice ==
+
+= 1.7.0-1 =
+
+(2016/09/18) Added support for punctuation marks preceding a "&raquo;" character (props @janvitos).
 
 = 1.6.1-1 =
 

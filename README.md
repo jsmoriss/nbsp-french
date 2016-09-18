@@ -3,9 +3,9 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Non-Breaking Space for French Content</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.6.1-1</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.7.0-1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.0</td></tr>
-<tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.6</td></tr>
+<tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.6.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="http://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
 <tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>nbsp, french, exclamation, question, interrogation, line-break</td></tr>
@@ -29,13 +29,17 @@
 
 <h4>Developer Filters</h4>
 
-<p><em>'nbsp_french_filter_priority' ( $filter_prio )</em> &mdash; The default filter priority (default: 10).</p>
+<p><em>'nbsp_french_filter_priority' ( $priority )</em> &mdash; The default filter priority (default: 10).</p>
 
-<p><em>'nbsp_french_add_filters' ( $filter_list )</em> &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).</p>
+<p><em>'nbsp_french_add_filters' ( array $names )</em> &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).</p>
 
 <p><em>'nbsp_french_filter_'.$filter_name ( $bool )</em> &mdash; Hook the filter name (default: true).</p>
 
-<p>Hook additional text filters by including their names in the 'nbsp_french_add_filters' array (see above), or hook filters individually in your functions.php file:</p>
+<p><em>'nbsp_french_preg_pattern ( array $pattern )</em> &mdash; An array of patterns to match.</p>
+
+<p><em>'nbsp_french_preg_replace ( array $replace )</em> &mdash; An array of replacement strings.</p>
+
+<p>To hook additional text filters, include their names in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:</p>
 
 <pre>
 add_filter( $filter_name, array( 'NbspFrench', 'filter' ) );
