@@ -1,15 +1,18 @@
 <?php
 /*
  * Plugin Name: JSM's Non-Breaking Space for French Content
+ * Text Domain: nbsp-french
+ * Domain Path: /languages
  * Plugin URI: http://surniaulula.com/extend/plugins/nbsp-french/
+ * Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
  * Author: JS Morisset
  * Author URI: http://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.0
- * Tested Up To: 4.6
- * Version: 1.6.1-1
+ * Tested Up To: 4.6.1
+ * Version: 1.7.0-1
  * 
  * This script is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -62,49 +65,56 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		
 			$new_text = '';
 			$has_french = strpos( $text, '<!--:fr-->' ) ? false : true;
-			$next_is_french = null;
+			$next_french = false;
 		
 			// add newlines before and after script and pre code blocks
 			$text = preg_replace( '/\r?\n?<(!--|script|pre)/i', "\n".'<$1', $text );
 			$text = preg_replace( '/(--|\/script|\/pre)>\r?\n?/i', '$1>'."\n", $text );
 		
+			$pattern = apply_filters( 'nbsp_french_preg_pattern', array( 
+				'/(\«|\&laquo;) (\w)/',			// quotation followed by word
+				'/(\w) (\!|\?|\:|\;|\»|\&raquo;|\%)/',	// word followed by puntuation
+				'/(\!|\?|\.) (\»|\&raquo;)/',		// punctuation followed by quotation
+			) );
+		
+			$replace = apply_filters( 'nbsp_french_preg_replace', array( 
+				'$1&nbsp;$2',
+				'$1&nbsp;$2',
+				'$1&nbsp;$2',
+			) );
+		
 			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $text) as $line) {
 		
-				if ( $has_french === false && $next_is_french === true ) {
+				if ( $has_french === false && 
+					$next_french === true ) {
+
 					$has_french = true;
-					$next_is_french = null;
+					$next_french = false;
 				}
 			
 				// newline is added before and after comments
-				if ( $has_french === false && strpos( $line, '<!--:fr-->' ) )
-					$has_french = true;
+				if ( $has_french === false && 
+					strpos( $line, '<!--:fr-->' ) )
+						$has_french = true;
 		
-				if ( $has_french === true && strpos( $line, '<!--:-->' ) )
-					$has_french = false;
+				if ( $has_french === true && 
+					strpos( $line, '<!--:-->' ) )
+						$has_french = false;
 		
-				if ( $has_french === true && preg_match( '/<(!--|script|pre)/i', $line ) )
-					$has_french = false;
+				if ( $has_french === true && 
+					preg_match( '/<(!--|script|pre)/i', $line ) )
+						$has_french = false;
 				
-				if ( $has_french === false && preg_match( '/(--|\/script|\/pre)>/i', $line ) )
-					$next_is_french = true;
+				if ( $has_french === false && 
+					preg_match( '/(--|\/script|\/pre)>/i', $line ) )
+						$next_french = true;
 		
-				if ( $has_french === true ) {
-		
-					$pattern = array( 
-						'/(\«) (\w)/',
-						'/(\w) (\!|\?|\:|\;|\»|\%)/'
-					); ksort($pattern);
-		
-					$replace = array( 
-						'$1&nbsp;$2',
-						'$1&nbsp;$2'
-					); ksort($replace);
-		
+				if ( $has_french === true )
 					$line = preg_replace( $pattern, $replace, $line);
-				}
+
 				$new_text .= $line."\n";
-			} 
-		
+			}
+
 			return rtrim( $new_text );	// remove last newline character
 		}
 	}
