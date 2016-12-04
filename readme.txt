@@ -11,7 +11,7 @@ Tags: nbsp, french, exclamation, question, interrogation, line-break
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.7
-Stable Tag: 1.7.1-1
+Stable Tag: 1.7.2-1
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
 
@@ -105,7 +105,7 @@ See [PHP's version_compare()](http://php.net/manual/en/function.version-compare.
 
 = Changelog / Release Notes =
 
-**Version 1.7.1-1 (2016/12/04)**
+**Version 1.7.2-1 (2016/12/04)**
 
 Maintenance release.
 
@@ -118,26 +118,9 @@ Maintenance release.
 * *Developer Notes*
 	* None
 
-**Version 1.7.0-1 (2016/09/18)**
-
-Maintenance release.
-
-* *New Features*
-	* Added support for punctuation marks preceding a "&raquo;" character (props @janvitos).
-* *Improvements*
-	* None
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added the 'nbsp_french_preg_pattern' and 'nbsp_french_preg_replace' filters.
-
 == Upgrade Notice ==
 
-= 1.7.1-1 =
+= 1.7.2-1 =
 
 (2016/12/04) Added support for &lt;style&gt;&lt;/style&gt; code blocks.
-
-= 1.7.0-1 =
-
-(2016/09/18) Added support for punctuation marks preceding a "&raquo;" character (props @janvitos).
 
