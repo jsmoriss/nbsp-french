@@ -12,7 +12,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.7
  * Tested Up To: 4.7
- * Version: 1.7.0-1
+ * Version: 1.7.1-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -76,9 +76,9 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			$has_french = strpos( $text, '<!--:fr-->' ) ? false : true;
 			$next_french = false;
 		
-			// add newlines before and after script and pre code blocks
-			$text = preg_replace( '/\r?\n?<(!--|script|pre)/i', "\n".'<$1', $text );
-			$text = preg_replace( '/(--|\/script|\/pre)>\r?\n?/i', '$1>'."\n", $text );
+			// add newlines before / after pre, script, and style code blocks
+			$text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n".'<$1', $text );
+			$text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>'."\n", $text );
 		
 			$pattern = apply_filters( 'nbsp_french_preg_pattern', array( 
 				'/(\«|\&laquo;) (\w)/',			// quotation followed by word
@@ -111,11 +111,11 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 						$has_french = false;
 		
 				if ( $has_french === true && 
-					preg_match( '/<(!--|script|pre)/i', $line ) )
+					preg_match( '/<(!--|pre|script|style)/i', $line ) )
 						$has_french = false;
 				
 				if ( $has_french === false && 
-					preg_match( '/(--|\/script|\/pre)>/i', $line ) )
+					preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) )
 						$next_french = true;
 		
 				if ( $has_french === true )
