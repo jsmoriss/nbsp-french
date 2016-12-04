@@ -12,7 +12,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.7
  * Tested Up To: 4.7
- * Version: 1.7.1-1
+ * Version: 1.7.2-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -74,9 +74,8 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		
 			$new_text = '';
 			$has_french = strpos( $text, '<!--:fr-->' ) ? false : true;
-			$next_french = false;
-		
-			// add newlines before / after pre, script, and style code blocks
+
+			// add newlines before / after HTML comments, pre, script, and style code blocks
 			$text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n".'<$1', $text );
 			$text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>'."\n", $text );
 		
@@ -94,32 +93,26 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		
 			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $text) as $line) {
 		
-				if ( $has_french === false && 
-					$next_french === true ) {
-
+				if ( ! $has_french && strpos( $line, '<!--:fr-->' ) ) {
 					$has_french = true;
-					$next_french = false;
+					$new_text .= $line."\n";
+					continue;
+				} elseif ( $has_french && strpos( $line, '<!--:-->' ) ) {
+					$has_french = false;
+					$new_text .= $line."\n";
+					continue;
+				} elseif ( $has_french && preg_match( '/<(!--|pre|script|style)/i', $line ) ) {
+					$has_french = false;
+					$new_text .= $line."\n";
+					continue;
+				} elseif ( ! $has_french && preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) ) {
+					$has_french = true;
+					$new_text .= $line."\n";
+					continue;
 				}
-			
-				// newline is added before and after comments
-				if ( $has_french === false && 
-					strpos( $line, '<!--:fr-->' ) )
-						$has_french = true;
 		
-				if ( $has_french === true && 
-					strpos( $line, '<!--:-->' ) )
-						$has_french = false;
-		
-				if ( $has_french === true && 
-					preg_match( '/<(!--|pre|script|style)/i', $line ) )
-						$has_french = false;
-				
-				if ( $has_french === false && 
-					preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) )
-						$next_french = true;
-		
-				if ( $has_french === true )
-					$line = preg_replace( $pattern, $replace, $line);
+				if ( $has_french )
+					$line = preg_replace( $pattern, $replace, $line );
 
 				$new_text .= $line."\n";
 			}
