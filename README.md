@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Non-Breaking Space for French Content</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.7.2-1</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.8.0-1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.7</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.7</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
@@ -18,11 +18,11 @@
 <h4>Recognized Punctuation</h4>
 
 <ul>
-<li>?</li>
 <li>!</li>
-<li>%</li>
+<li>?</li>
 <li>:</li>
 <li>;</li>
+<li>%</li>
 <li>&laquo;</li>
 <li>&raquo;</li>
 <li>Currency symbols and numeric thousands (example: 1 000,10 $).</li>

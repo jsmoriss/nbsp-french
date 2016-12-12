@@ -11,7 +11,7 @@ Tags: nbsp, french, exclamation, question, interrogation, line-break
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.7
-Stable Tag: 1.7.2-1
+Stable Tag: 1.8.0-1
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
 
@@ -21,11 +21,11 @@ This plugin will add non-breaking spaces where appropriate in the content, excer
 
 = Recognized Punctuation =
 
-* ?
 * !
-* %
+* ?
 * :
 * ;
+* %
 * &laquo;
 * &raquo;
 * Currency symbols and numeric thousands (example: 1 000,10 $).
