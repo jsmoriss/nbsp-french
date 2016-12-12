@@ -21,13 +21,14 @@ This plugin will add non-breaking spaces where appropriate in the content, excer
 
 = Recognized Punctuation =
 
-* !
 * ?
+* !
+* %
 * :
 * ;
-* %
 * &laquo;
 * &raquo;
+* Currency symbols and numeric thousands (example: 1 000,10 $).
 
 = Developer Filters =
 
@@ -37,9 +38,9 @@ This plugin will add non-breaking spaces where appropriate in the content, excer
 
 *'nbsp_french_filter_'.$name ( $bool )* &mdash; Hook the filter name (default: true).
 
-*'nbsp_french_preg_pattern' ( array $pattern )* &mdash; An array of patterns to match.
+*'nbsp_french_currencies' ( $pcre )* &mdash; A list of recognized currencies.
 
-*'nbsp_french_preg_replace' ( array $replace )* &mdash; An array of replacement strings.
+*'nbsp_french_preg_first_second_last' ( array $pattern )* &mdash; An array of patterns to match. Spaces are replaced in the second set of parenthesis, and the returned string corresponds to the first, second, and last set of parenthesis.
 
 To hook additional text filters, include their names in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
 
@@ -112,6 +113,21 @@ Maintenance release.
 * *New Features*
 	* None
 * *Improvements*
+	* Added support for currency symbols and numeric thousands (example: 1 000,10 $).
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Added a callback to the preg_replace() function to replace spaces in the second set of parenthesis, and return a string corresponding to the first, second, and last set of parenthesis.
+	* Renamed the 'nbsp_french_preg_pattern' filter by 'nbsp_french_preg_first_second_last'.
+	* Removed the 'nbsp_french_preg_replace' filter.
+
+**Version 1.7.2-1 (2016/12/04)**
+
+Maintenance release.
+
+* *New Features*
+	* None
+* *Improvements*
 	* Added support for &lt;style&gt;&lt;/style&gt; code blocks.
 * *Bugfixes*
 	* None
@@ -119,6 +135,10 @@ Maintenance release.
 	* None
 
 == Upgrade Notice ==
+
+= 1.8.0-1 =
+
+(2016/12/13) Added support for currency symbols and numeric thousands (example: 1 000,10 $).
 
 = 1.7.2-1 =
 

@@ -18,13 +18,14 @@
 <h4>Recognized Punctuation</h4>
 
 <ul>
-<li>!</li>
 <li>?</li>
+<li>!</li>
+<li>%</li>
 <li>:</li>
 <li>;</li>
-<li>%</li>
 <li>&laquo;</li>
 <li>&raquo;</li>
+<li>Currency symbols and numeric thousands (example: 1 000,10 $).</li>
 </ul>
 
 <h4>Developer Filters</h4>
@@ -35,9 +36,9 @@
 
 <p><em>'nbsp_french_filter_'.$name ( $bool )</em> &mdash; Hook the filter name (default: true).</p>
 
-<p><em>'nbsp_french_preg_pattern' ( array $pattern )</em> &mdash; An array of patterns to match.</p>
+<p><em>'nbsp_french_currencies' ( $pcre )</em> &mdash; A list of recognized currencies.</p>
 
-<p><em>'nbsp_french_preg_replace' ( array $replace )</em> &mdash; An array of replacement strings.</p>
+<p><em>'nbsp_french_preg_first_second_last' ( array $pattern )</em> &mdash; An array of patterns to match. Spaces are replaced in the second set of parenthesis, and the returned string corresponds to the first, second, and last set of parenthesis.</p>
 
 <p>To hook additional text filters, include their names in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:</p>
 
