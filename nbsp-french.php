@@ -12,7 +12,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.7
  * Tested Up To: 4.7
- * Version: 1.7.2-1
+ * Version: 1.8.0-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -73,51 +73,60 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		public static function filter( $text ) {
 		
 			$new_text = '';
-			$has_french = strpos( $text, '<!--:fr-->' ) ? false : true;
+			$has_french = $default = strpos( $text, '<!--:fr-->' ) !== false ? false : true;
+
+			// http://character-code.com/currency-html-codes.php
+			$currencies = apply_filters( 'nbsp_french_currencies',
+				'¤|&curren;|\$|¢|&cent;|£|&pound;|¥|&yen;|₣|&#8355;|€|&euro;' );
 
 			// add newlines before / after HTML comments, pre, script, and style code blocks
 			$text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n".'<$1', $text );
 			$text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>'."\n", $text );
 		
-			$pattern = apply_filters( 'nbsp_french_preg_pattern', array( 
-				'/(\«|\&laquo;) (\w)/',			// quotation followed by word
-				'/(\w) (\!|\?|\:|\;|\»|\&raquo;|\%)/',	// word followed by puntuation
-				'/(\!|\?|\.) (\»|\&raquo;)/',		// punctuation followed by quotation
-			) );
-		
-			$replace = apply_filters( 'nbsp_french_preg_replace', array( 
-				'$1&nbsp;$2',
-				'$1&nbsp;$2',
-				'$1&nbsp;$2',
+			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array( 
+				'/(«|&laquo;)( )(\w)/u',			// quotation followed by word
+				'/(\w)( )(\?|!|%|:|;|»|&raquo;)/u',		// word followed by puntuation
+				'/(\.|\?|\!)( )(»|&raquo;)/u',			// punctuation followed by quotation
+				'/( \d{1,3})(( \d{3,3})+)(,\d+[\. ]|[\. ])/u',	// 1 000, 1 000 000, etc.
+				'/(\d)( )('.$currencies.')/u',			// number followed by currency symbol
 			) );
 		
 			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $text) as $line) {
 		
 				if ( ! $has_french && strpos( $line, '<!--:fr-->' ) ) {
-					$has_french = true;
+					$has_french = $default = true;
 					$new_text .= $line."\n";
 					continue;
 				} elseif ( $has_french && strpos( $line, '<!--:-->' ) ) {
-					$has_french = false;
+					$has_french = $default = false;
 					$new_text .= $line."\n";
 					continue;
-				} elseif ( $has_french && preg_match( '/<(!--|pre|script|style)/i', $line ) ) {
-					$has_french = false;
+				} elseif ( preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) ) {
+					$has_french = $default;	// back to default
 					$new_text .= $line."\n";
 					continue;
-				} elseif ( ! $has_french && preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) ) {
-					$has_french = true;
+				} elseif ( preg_match( '/<(!--|pre|script|style)/i', $line ) ) {
+					$has_french = false;
 					$new_text .= $line."\n";
 					continue;
 				}
 		
 				if ( $has_french )
-					$line = preg_replace( $pattern, $replace, $line );
+					$line = preg_replace_callback( $pattern, 
+						array( __CLASS__, 'get_first_second_last' ), $line );
 
 				$new_text .= $line."\n";
 			}
 
 			return rtrim( $new_text );	// remove last newline character
+		}
+
+		// replace space with non-breaking space in second element
+		// returns first, second, and last elements as a string
+		private static function get_first_second_last( $match ) {
+			$last_num = count( $match ) - 1;
+			$second_str = str_replace( ' ', '&nbsp;', $match[2] );
+			return $match[1].$second_str.$match[$last_num];
 		}
 	}
 
