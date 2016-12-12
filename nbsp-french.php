@@ -85,8 +85,8 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		
 			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array( 
 				'/(«|&laquo;)( )(\w)/u',			// quotation followed by word
-				'/(\w)( )(\?|!|%|:|;|»|&raquo;)/u',		// word followed by puntuation
-				'/(\.|\?|\!)( )(»|&raquo;)/u',			// punctuation followed by quotation
+				'/(\w)( )(!|\?|:|;|%|»|&raquo;)/u',		// word followed by puntuation
+				'/(\.|!|\?)( )(»|&raquo;)/u',			// punctuation followed by quotation
 				'/( \d{1,3})(( \d{3,3})+)(,\d+[\. ]|[\. ])/u',	// 1 000, 1 000 000, etc.
 				'/(\d)( )('.$currencies.')/u',			// number followed by currency symbol
 			) );
