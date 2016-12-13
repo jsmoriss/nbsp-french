@@ -11,28 +11,30 @@ Tags: nbsp, french, exclamation, question, interrogation, line-break
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.7
-Stable Tag: 1.8.0-1
+Stable Tag: 1.8.1-1
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
 
 == Description ==
 
-This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks, styles and scripts. If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
+This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks, styles and scripts. 
 
-There are no plugin settings &mdash simply install and activate the plugin.
+If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
+
+There are no plugin settings &mdash; simply install and activate the plugin.
 
 = Filters for Developers =
 
-*'nbsp_french_add_filters' ( array $names )* &mdash; An associative array of filter names to hook along with their priority (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).
+*'nbsp_french_add_filters' ( array $names )* &mdash; An associative array of filter names (and their priority number) to hook by default.
 
 *'nbsp_french_currencies' ( $pcre )* &mdash; A list of recognized currencies.
 
 *'nbsp_french_preg_first_second_last' ( array $pattern )* &mdash; An array of patterns to match. Spaces are replaced in the second set of parenthesis, and the returned string corresponds to the first, second, and last set of parenthesis.
 
-To hook additional text filters, include their names and priority in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
+To hook additional filters, include their names and priority in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
 
 <pre>
-add_filter( $filter_name, array( 'NbspFrench', 'filter' ) );
+add_filter( 'your_filter_name', array( 'NbspFrench', 'filter' ) );
 </pre>
 
 == Installation ==
