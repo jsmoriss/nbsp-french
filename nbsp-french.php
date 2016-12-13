@@ -12,7 +12,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.7
  * Tested Up To: 4.7
- * Version: 1.8.0-1
+ * Version: 1.8.1-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
  *
@@ -52,26 +52,18 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		}
 
 		public function __construct() {
-
-			$filter_prio = apply_filters( 'nbsp_french_filter_priority', 
-				( defined( 'NBSP_FRENCH_FILTER_PRIORITY' ) ? 
-					NBSP_FRENCH_FILTER_PRIORITY : 10 ) );
-
 			foreach ( apply_filters( 'nbsp_french_add_filters', array( 
-				'the_title',
-				'the_content',
-				'the_excerpt',
-				'comment_text',
-				'widget_title',
-				'widget_text',
-			) ) as $filter_name ) {
-				if ( apply_filters( 'nbsp_french_filter_'.$filter_name, true ) )
-					add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
-			}
+				'the_title' => 10,
+				'the_content' => 10,
+				'the_excerpt' => 10,
+				'comment_text' => 10,
+				'widget_title' => 10,
+				'widget_text' => 10,
+			) ) as $filter_name => $filter_prio )
+				add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
 		}
 
 		public static function filter( $text ) {
-		
 			$new_text = '';
 			$has_french = $default = strpos( $text, '<!--:fr-->' ) !== false ? false : true;
 
