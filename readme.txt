@@ -5,7 +5,7 @@ Text Domain: nbsp-french
 Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
-Donate Link:
+Donate Link: https://www.paypal.me/jsmoriss
 Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
 Tags: nbsp, french, exclamation, question, interrogation, line-break
 Contributors: jsmoriss
