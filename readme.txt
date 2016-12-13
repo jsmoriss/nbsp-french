@@ -17,32 +17,19 @@ Adds a non-breaking space between words and punctuation marks to avoid inappropr
 
 == Description ==
 
-This plugin will add non-breaking spaces where appropriate in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks and scripts &mdash; and if the `<!--:fr-->` HTML  tag is found, non-breaking spaces will be added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
+This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks, styles and scripts. If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
-= Recognized Punctuation =
+There are no plugin settings &mdash simply install and activate the plugin.
 
-* !
-* ?
-* :
-* ;
-* %
-* &laquo;
-* &raquo;
-* Currency symbols and numeric thousands (example: 1 000,10 $).
+= Filters for Developers =
 
-= Developer Filters =
-
-*'nbsp_french_filter_priority' ( $priority )* &mdash; The default filter priority (default: 10).
-
-*'nbsp_french_add_filters' ( array $names )* &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).
-
-*'nbsp_french_filter_'.$name ( $bool )* &mdash; Hook the filter name (default: true).
+*'nbsp_french_add_filters' ( array $names )* &mdash; An associative array of filter names to hook along with their priority (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).
 
 *'nbsp_french_currencies' ( $pcre )* &mdash; A list of recognized currencies.
 
 *'nbsp_french_preg_first_second_last' ( array $pattern )* &mdash; An array of patterns to match. Spaces are replaced in the second set of parenthesis, and the returned string corresponds to the first, second, and last set of parenthesis.
 
-To hook additional text filters, include their names in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
+To hook additional text filters, include their names and priority in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
 
 <pre>
 add_filter( $filter_name, array( 'NbspFrench', 'filter' ) );
@@ -106,9 +93,19 @@ See [PHP's version_compare()](http://php.net/manual/en/function.version-compare.
 
 = Changelog / Release Notes =
 
-**Version 1.7.2-1 (2016/12/04)**
+**Version 1.8.1-1 (2016/12/13)**
 
-Maintenance release.
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* Changed the 'nbsp_french_add_filters' array to an associative array with filter names and priority numbers.
+	* Removed the 'nbsp_french_filter_priority' and 'nbsp_french_filter_'.$filter_name filters.
+
+**Version 1.8.0-1 (2016/12/13)**
 
 * *New Features*
 	* None
@@ -123,8 +120,6 @@ Maintenance release.
 
 **Version 1.7.2-1 (2016/12/04)**
 
-Maintenance release.
-
 * *New Features*
 	* None
 * *Improvements*
@@ -135,6 +130,10 @@ Maintenance release.
 	* None
 
 == Upgrade Notice ==
+
+= 1.8.1-1 =
+
+(2016/12/13) Changed the 'nbsp_french_add_filters' array to an associative array with filter names and priority numbers.
 
 = 1.8.0-1 =
 

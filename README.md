@@ -14,34 +14,19 @@
 
 <h2>Description</h2>
 
-<p>This plugin will add non-breaking spaces where appropriate in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks and scripts &mdash; and if the <code>&lt;!--:fr--&gt;</code> HTML  tag is found, non-breaking spaces will be added only between the <code>&lt;!--:fr--&gt;</code> and <code>&lt;!--:--&gt;</code> HTML tags.</p>
+<p>This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks, styles and scripts. If the <code>&lt;!--:fr--&gt;</code> HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the <code>&lt;!--:fr--&gt;</code> and <code>&lt;!--:--&gt;</code> HTML tags.</p>
 
-<h4>Recognized Punctuation</h4>
+<p>There are no plugin settings &amp;mdash simply install and activate the plugin.</p>
 
-<ul>
-<li>!</li>
-<li>?</li>
-<li>:</li>
-<li>;</li>
-<li>%</li>
-<li>&laquo;</li>
-<li>&raquo;</li>
-<li>Currency symbols and numeric thousands (example: 1 000,10 $).</li>
-</ul>
+<h4>Filters for Developers</h4>
 
-<h4>Developer Filters</h4>
-
-<p><em>'nbsp_french_filter_priority' ( $priority )</em> &mdash; The default filter priority (default: 10).</p>
-
-<p><em>'nbsp_french_add_filters' ( array $names )</em> &mdash; The default filter list to hook (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).</p>
-
-<p><em>'nbsp_french_filter_'.$name ( $bool )</em> &mdash; Hook the filter name (default: true).</p>
+<p><em>'nbsp_french_add_filters' ( array $names )</em> &mdash; An associative array of filter names to hook along with their priority (default: 'the_title', 'the_content', 'the_excerpt', 'comment_text', 'widget_title', 'widget_text' ).</p>
 
 <p><em>'nbsp_french_currencies' ( $pcre )</em> &mdash; A list of recognized currencies.</p>
 
 <p><em>'nbsp_french_preg_first_second_last' ( array $pattern )</em> &mdash; An array of patterns to match. Spaces are replaced in the second set of parenthesis, and the returned string corresponds to the first, second, and last set of parenthesis.</p>
 
-<p>To hook additional text filters, include their names in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:</p>
+<p>To hook additional text filters, include their names and priority in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:</p>
 
 <pre>
 add_filter( $filter_name, array( 'NbspFrench', 'filter' ) );
