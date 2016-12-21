@@ -3,10 +3,10 @@
  * Plugin Name: JSM's Non-Breaking Space for French Content
  * Text Domain: nbsp-french
  * Domain Path: /languages
- * Plugin URI: http://surniaulula.com/extend/plugins/nbsp-french/
+ * Plugin URI: https://surniaulula.com/extend/plugins/nbsp-french/
  * Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
  * Author: JS Morisset
- * Author URI: http://surniaulula.com/
+ * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
@@ -33,7 +33,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
  * 
- * Copyright 2012-2016 Jean-Sebastien Morisset (http://surniaulula.com/)
+ * Copyright 2012-2016 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) 
