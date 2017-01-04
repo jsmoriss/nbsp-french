@@ -45,12 +45,6 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 		private static $instance;
 
-		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
-				self::$instance = new self;
-			return self::$instance;
-		}
-
 		public function __construct() {
 			foreach ( apply_filters( 'nbsp_french_add_filters', array( 
 				'the_title' => 10,
@@ -61,6 +55,12 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				'widget_text' => 10,
 			) ) as $filter_name => $filter_prio )
 				add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
+		}
+
+		public static function &get_instance() {
+			if ( ! isset( self::$instance ) )
+				self::$instance = new self;
+			return self::$instance;
 		}
 
 		public static function filter( $text ) {
