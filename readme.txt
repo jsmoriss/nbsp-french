@@ -81,7 +81,7 @@ add_filter( 'your_filter_name', array( 'NbspFrench', 'filter' ) );
 
 = Repositories =
 
-* [GitHub](https://github.com/jsmoriss/nbsp-french)
+* [GitHub](https://jsmoriss.github.io/nbsp-french/)
 * [WordPress.org](https://wordpress.org/plugins/nbsp-french/developers/)
 
 = Version Numbering Scheme =
