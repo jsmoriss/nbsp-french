@@ -11,7 +11,7 @@
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires At Least: 3.7
- * Tested Up To: 4.7
+ * Tested Up To: 4.7.1
  * Version: 1.8.1-1
  *
  * Version Components: {major}.{minor}.{bugfix}-{stage}{level}
