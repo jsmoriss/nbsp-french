@@ -10,7 +10,7 @@ Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
 Tags: nbsp, french, exclamation, question, interrogation, line-break, puntuation, non-breaking, space
 Contributors: jsmoriss
 Requires At Least: 3.8
-Tested Up To: 4.7.2
+Tested Up To: 4.7.3
 Stable Tag: 1.8.1-1
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
