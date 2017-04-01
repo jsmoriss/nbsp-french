@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
-Tags: nbsp, french, exclamation, question, interrogation, line-break, puntuation, non-breaking, space
+Tags: non-breaking, french, content, line-break, punctuation, space, new line, line break
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.7.3
