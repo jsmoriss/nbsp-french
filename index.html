@@ -55,14 +55,12 @@
 
 <p><em>'nbsp_french_add_filters' ( array $names )</em> &mdash; An associative array of filter names (and their priority number) to hook by default.</p>
 
-<p><em>'nbsp_french_currencies' ( $pcre )</em> &mdash; A list of recognized currencies.</p>
+<p><em>'nbsp_french_currencies' ( $regex )</em> &mdash; A list of recognized currencies.</p>
 
-<p><em>'nbsp_french_preg_first_second_last' ( array $pattern )</em> &mdash; An array of patterns to match. Spaces are replaced in the second set of parenthesis, and the returned string corresponds to the first, second, and last set of parenthesis.</p>
-
-<p>To hook additional filters, include their names and priority in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:</p>
+<p>To hook additional filters, include their names and priority in the 'nbsp_french_add_filters' array or hook them individually in your functions.php:</p>
 
 <pre>
-add_filter( 'your_filter_name', array( 'NbspFrench', 'filter' ) );
+add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
 
 
