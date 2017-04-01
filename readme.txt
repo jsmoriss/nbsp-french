@@ -28,14 +28,12 @@ If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-
 
 *'nbsp_french_add_filters' ( array $names )* &mdash; An associative array of filter names (and their priority number) to hook by default.
 
-*'nbsp_french_currencies' ( $pcre )* &mdash; A list of recognized currencies.
+*'nbsp_french_currencies' ( $regex )* &mdash; A list of recognized currencies.
 
-*'nbsp_french_preg_first_second_last' ( array $pattern )* &mdash; An array of patterns to match. Spaces are replaced in the second set of parenthesis, and the returned string corresponds to the first, second, and last set of parenthesis.
-
-To hook additional filters, include their names and priority in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php file:
+To hook additional filters, include their names and priority in the 'nbsp_french_add_filters' array or hook them individually in your functions.php:
 
 <pre>
-add_filter( 'your_filter_name', array( 'NbspFrench', 'filter' ) );
+add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
 
 == Installation ==
