@@ -81,7 +81,7 @@ add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 )
 * [GitHub](https://jsmoriss.github.io/nbsp-french/)
 * [WordPress.org](https://wordpress.org/plugins/nbsp-french/developers/)
 
-= Version Numbering Scheme =
+= Version Numbering =
 
 Version components: `{major}.{minor}.{bugfix}-{stage}{level}`
 
