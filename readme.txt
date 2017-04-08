@@ -92,7 +92,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.8.1-1 (2016/12/13)**
+**Version 1.8.2 (2017/04/08)**
 
 * *New Features*
 	* None
@@ -101,44 +101,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Changed the 'nbsp_french_add_filters' array to an associative array with filter names and priority numbers.
-	* Removed the 'nbsp_french_filter_priority' and 'nbsp_french_filter_'.$filter_name filters.
-
-**Version 1.8.0-1 (2016/12/13)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added support for currency symbols and numeric thousands (example: 1 000,10 $).
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* Added a callback to the preg_replace() function to replace spaces in the second set of parenthesis, and return a string corresponding to the first, second, and last set of parenthesis.
-	* Renamed the 'nbsp_french_preg_pattern' filter by 'nbsp_french_preg_first_second_last'.
-	* Removed the 'nbsp_french_preg_replace' filter.
-
-**Version 1.7.2-1 (2016/12/04)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added support for &lt;style&gt;&lt;/style&gt; code blocks.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
+	* Maintenance release - update to version numbering scheme.
+	* Dropped the package number from the production version string.
 
 == Upgrade Notice ==
 
-= 1.8.1-1 =
+= 1.8.2 =
 
-(2016/12/13) Changed the 'nbsp_french_add_filters' array to an associative array with filter names and priority numbers.
-
-= 1.8.0-1 =
-
-(2016/12/13) Added support for currency symbols and numeric thousands (example: 1 000,10 $).
-
-= 1.7.2-1 =
-
-(2016/12/04) Added support for &lt;style&gt;&lt;/style&gt; code blocks.
+(2017/04/08) Maintenance release - update to version numbering scheme.
 
