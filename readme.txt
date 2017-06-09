@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
 Tags: non-breaking, french, content, line-break, punctuation, space, new line, line break
 Contributors: jsmoriss
 Requires At Least: 3.7
-Tested Up To: 4.7.5
+Tested Up To: 4.8
 Stable Tag: 1.8.2
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
