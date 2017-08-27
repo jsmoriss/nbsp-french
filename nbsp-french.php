@@ -42,13 +42,15 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				'comment_text' => 10,
 				'widget_title' => 10,
 				'widget_text' => 10,
-			) ) as $filter_name => $filter_prio )
+			) ) as $filter_name => $filter_prio ) {
 				add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
+			}
 		}
 
 		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
+			if ( ! isset( self::$instance ) ) {
 				self::$instance = new self;
+			}
 			return self::$instance;
 		}
 
@@ -92,9 +94,9 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 					continue;
 				}
 		
-				if ( $has_french )
-					$line = preg_replace_callback( $pattern, 
-						array( __CLASS__, 'get_first_second_last' ), $line );
+				if ( $has_french ) {
+					$line = preg_replace_callback( $pattern, array( __CLASS__, 'get_first_second_last' ), $line );
+				}
 
 				$new_text .= $line."\n";
 			}
