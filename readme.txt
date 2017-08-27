@@ -26,7 +26,18 @@ If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-
 
 = Filters for Developers =
 
-*'nbsp_french_add_filters' ( array $names )* &mdash; An associative array of filter names (and their priority number) to hook by default.
+*'nbsp_french_add_filters' ( array $names )* &mdash; An associative array of filter names (and their priority number) to hook by default. Examples:
+
+<pre>
+array(
+	'the_title' => 10,
+	'the_content' => 10,
+	'the_excerpt' => 10,
+	'comment_text' => 10,
+	'widget_title' => 10,
+	'widget_text' => 10,
+)
+</pre>
 
 *'nbsp_french_currencies' ( $regex )* &mdash; A list of recognized currencies.
 

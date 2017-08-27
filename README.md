@@ -23,7 +23,18 @@
 
 <h4>Filters for Developers</h4>
 
-<p><em>'nbsp_french_add_filters' ( array $names )</em> &mdash; An associative array of filter names (and their priority number) to hook by default.</p>
+<p><em>'nbsp_french_add_filters' ( array $names )</em> &mdash; An associative array of filter names (and their priority number) to hook by default. Examples:</p>
+
+<pre>
+array(
+    'the_title' => 10,
+    'the_content' => 10,
+    'the_excerpt' => 10,
+    'comment_text' => 10,
+    'widget_title' => 10,
+    'widget_text' => 10,
+)
+</pre>
 
 <p><em>'nbsp_french_currencies' ( $regex )</em> &mdash; A list of recognized currencies.</p>
 
