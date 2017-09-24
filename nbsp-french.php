@@ -34,16 +34,20 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 	class NbspFrench {
 
 		private static $instance;
+		private static $filters = array(
+			'the_title' => 10,
+			'the_content' => 10,
+			'the_excerpt' => 10,
+			'comment_text' => 10,
+			'widget_title' => 10,
+			'widget_text' => 10,
+		);
 
 		public function __construct() {
-			foreach ( apply_filters( 'nbsp_french_add_filters', array( 
-				'the_title' => 10,
-				'the_content' => 10,
-				'the_excerpt' => 10,
-				'comment_text' => 10,
-				'widget_title' => 10,
-				'widget_text' => 10,
-			) ) as $filter_name => $filter_prio ) {
+
+			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+
+			foreach ( apply_filters( 'nbsp_french_add_filters', self::$filters ) as $filter_name => $filter_prio ) {
 				add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
 			}
 		}
@@ -53,6 +57,10 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				self::$instance = new self;
 			}
 			return self::$instance;
+		}
+
+		public static function load_textdomain() {
+			load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
 		}
 
 		public static function filter( $text ) {
