@@ -21,7 +21,7 @@
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-<h3>Filters for Developers</h3>
+<h4>Filters for Developers</h4>
 
 <p><em>'nbsp_french_add_filters' ( array $names )</em></p>
 

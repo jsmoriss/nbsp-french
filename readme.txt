@@ -25,7 +25,7 @@ If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-<h3>Filters for Developers</h3>
+= Filters for Developers =
 
 *'nbsp_french_add_filters' ( array $names )*
 
