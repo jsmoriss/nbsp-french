@@ -29,7 +29,7 @@ If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-
 
 *'nbsp_french_add_filters' ( array $names )*
 
-An associative array of filter names (and their priority number) for the plugin to hook by default.
+An associative array of filter names (and priority) for the plugin to hook by default.
 
 <pre>
 array(
@@ -42,15 +42,15 @@ array(
 )
 </pre>
 
-*'nbsp_french_currencies' ( $regex )*
-
-A list of recognized currencies.
-
 To hook additional filters, include their names (and priority) in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php:
 
 <pre>
 add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
+
+*'nbsp_french_currencies' ( $regex )*
+
+A list of recognized currencies.
 
 == Installation ==
 
