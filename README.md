@@ -21,9 +21,11 @@
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-<h4>Filters for Developers</h4>
+<h3>Filters for Developers</h3>
 
-<p><em>'nbsp_french_add_filters' ( array $names )</em> &mdash; An associative array of filter names (and their priority number) to hook by default. Examples:</p>
+<p><em>'nbsp_french_add_filters' ( array $names )</em></p>
+
+<p>An associative array of filter names (and their priority number) for the plugin to hook by default.</p>
 
 <pre>
 array(
@@ -36,9 +38,11 @@ array(
 )
 </pre>
 
-<p><em>'nbsp_french_currencies' ( $regex )</em> &mdash; A list of recognized currencies.</p>
+<p><em>'nbsp_french_currencies' ( $regex )</em></p>
 
-<p>To hook additional filters, include their names and priority in the 'nbsp_french_add_filters' array or hook them individually in your functions.php:</p>
+<p>A list of recognized currencies.</p>
+
+<p>To hook additional filters, include their names (and priority) in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php:</p>
 
 <pre>
 add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
