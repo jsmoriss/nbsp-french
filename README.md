@@ -80,7 +80,7 @@ add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 )
 
 <h2>Frequently Asked Questions</h2>
 
-<h4>Frequently Asked Questions</h4>
+<h3>Frequently Asked Questions</h3>
 
 <ul>
 <li>None</li>
@@ -90,7 +90,7 @@ add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 )
 <h2>Other Notes</h2>
 
 <h3>Other Notes</h3>
-<h4>Additional Documentation</h4>
+<h3>Additional Documentation</h3>
 
 <ul>
 <li>None</li>
