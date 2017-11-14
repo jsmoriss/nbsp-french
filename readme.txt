@@ -8,8 +8,8 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
 Tags: non-breaking, french, content, line-break, punctuation, space, new line, line break
 Contributors: jsmoriss
-Requires PHP: 5.3
-Requires At Least: 3.7
+Requires PHP: 5.4
+Requires At Least: 3.8
 Tested Up To: 4.9
 Stable Tag: 1.8.2
 
