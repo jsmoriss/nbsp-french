@@ -12,7 +12,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires PHP: 5.4
  * Requires At Least: 3.8
- * Tested Up To: 4.9
+ * Tested Up To: 4.9.1
  * Version: 1.8.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
