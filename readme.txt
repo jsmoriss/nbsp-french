@@ -10,7 +10,7 @@ Tags: non-breaking, french, content, line-break, punctuation, space, new line, l
 Contributors: jsmoriss
 Requires PHP: 5.4
 Requires At Least: 3.8
-Tested Up To: 4.9
+Tested Up To: 4.9.1
 Stable Tag: 1.8.2
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
