@@ -21,9 +21,7 @@ This plugin adds non-breaking spaces required by the French language in the cont
 
 If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
-<blockquote>
-<p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
-</blockquote>
+There are no plugin settings &mdash; simply install and activate the plugin.
 
 = Filters for Developers =
 
