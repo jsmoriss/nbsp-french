@@ -73,15 +73,15 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				'¤|&curren;|\$|¢|&cent;|£|&pound;|¥|&yen;|₣|&#8355;|€|&euro;' );
 
 			// add newlines before / after HTML comments, pre, script, and style code blocks
-			$text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n".'<$1', $text );
-			$text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>'."\n", $text );
+			$text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $text );
+			$text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $text );
 		
 			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array( 
 				'/(«|&laquo;)( )(\w)/u',		// quotation followed by word
 				'/(\w)( )([!\?:;%»]|&raquo;)/u',	// word followed by puntuation
 				'/([\.!\?])( )(»|&raquo;)/u',		// punctuation followed by quotation
 				'/( \d{1,3})(( \d{3,3})+)([\., ])/u',	// 1 000, 1 000 000, etc.
-				'/(\d)( )('.$currencies.')/u',		// number followed by currency symbol
+				'/(\d)( )(' . $currencies . ')/u',	// number followed by currency symbol
 			) );
 		
 			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $text) as $line) {
@@ -119,7 +119,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		private static function get_first_second_last( $match ) {
 			$last_num = count( $match ) - 1;
 			$second_str = str_replace( ' ', '&nbsp;', $match[2] );
-			return $match[1].$second_str.$match[$last_num];
+			return $match[1] . $second_str . $match[$last_num];
 		}
 	}
 
