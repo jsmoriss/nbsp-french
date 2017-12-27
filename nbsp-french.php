@@ -88,19 +88,19 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		
 				if ( ! $has_french && strpos( $line, '<!--:fr-->' ) ) {
 					$has_french = $default = true;
-					$new_text .= $line."\n";
+					$new_text .= $line . "\n";
 					continue;
 				} elseif ( $has_french && strpos( $line, '<!--:-->' ) ) {
 					$has_french = $default = false;
-					$new_text .= $line."\n";
+					$new_text .= $line . "\n";
 					continue;
 				} elseif ( preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) ) {
 					$has_french = $default;	// back to default
-					$new_text .= $line."\n";
+					$new_text .= $line . "\n";
 					continue;
 				} elseif ( preg_match( '/<(!--|pre|script|style)/i', $line ) ) {
 					$has_french = false;
-					$new_text .= $line."\n";
+					$new_text .= $line . "\n";
 					continue;
 				}
 		
@@ -108,7 +108,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 					$line = preg_replace_callback( $pattern, array( __CLASS__, 'get_first_second_last' ), $line );
 				}
 
-				$new_text .= $line."\n";
+				$new_text .= $line . "\n";
 			}
 
 			return rtrim( $new_text );	// remove last newline character
