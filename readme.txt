@@ -93,7 +93,7 @@ A list of recognized currencies.
 <h3>Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/nbsp-french/)
-* [WordPress.org](https://wordpress.org/plugins/nbsp-french/developers/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/nbsp-french/)
 
 <h3>Version Numbering</h3>
 
