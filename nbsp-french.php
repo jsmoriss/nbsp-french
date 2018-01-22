@@ -125,4 +125,3 @@ if ( ! class_exists( 'NbspFrench' ) ) {
         global $nbsp_french;
 	$nbsp_french = NbspFrench::get_instance();
 }
-
