@@ -76,13 +76,13 @@ A list of recognized currencies.
 
 == Frequently Asked Questions ==
 
-<h3>Frequently Asked Questions</h3>
+<h3 class="top">Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-<h3>Additional Documentation</h3>
+<h3 class="top">Additional Documentation</h3>
 
 * None
 
@@ -90,12 +90,7 @@ A list of recognized currencies.
 
 == Changelog ==
 
-<h3>Repositories</h3>
-
-* [GitHub](https://jsmoriss.github.io/nbsp-french/)
-* [WordPress.org](https://plugins.trac.wordpress.org/browser/nbsp-french/)
-
-<h3>Version Numbering</h3>
+<h3 class="top">Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
@@ -103,6 +98,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {minor} = New functionality was added or improved in a backwards-compatible manner.
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
+
+<h3>Repositories</h3>
+
+* [GitHub](https://jsmoriss.github.io/nbsp-french/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/nbsp-french/)
 
 <h3>Changelog / Release Notes</h3>
 
