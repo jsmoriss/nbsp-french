@@ -12,7 +12,7 @@
  * Description: Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires PHP: 5.4
  * Requires At Least: 3.8
- * Tested Up To: 4.9.6
+ * Tested Up To: 4.9.7
  * Version: 1.8.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
@@ -73,7 +73,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			$currencies = apply_filters( 'nbsp_french_currencies',
 				'¤|&curren;|\$|¢|&cent;|£|&pound;|¥|&yen;|₣|&#8355;|€|&euro;' );
 
-			// add newlines before / after HTML comments, pre, script, and style code blocks
+			// add newlines before/after HTML comments, pre, script, and style code blocks
 			$text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $text );
 			$text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $text );
 		
