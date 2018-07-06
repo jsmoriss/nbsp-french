@@ -17,7 +17,7 @@
 
 <p>If the <code>&lt;!--:fr--&gt;</code> HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the <code>&lt;!--:fr--&gt;</code> and <code>&lt;!--:--&gt;</code> HTML tags.</p>
 
-<p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
+<p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
 
 <h4>Filters for Developers</h4>
 
