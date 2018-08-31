@@ -34,13 +34,14 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 	class NbspFrench {
 
 		private static $instance;
+
 		private static $filters = array(
-			'the_title' => 10,
-			'the_content' => 10,
-			'the_excerpt' => 10,
+			'the_title'    => 10,
+			'the_content'  => 10,
+			'the_excerpt'  => 10,
 			'comment_text' => 10,
 			'widget_title' => 10,
-			'widget_text' => 10,
+			'widget_text'  => 10,
 		);
 
 		public function __construct() {
@@ -115,15 +116,21 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			return rtrim( $new_text );	// remove last newline character
 		}
 
-		// replace space with non-breaking space in second element
-		// returns first, second, and last elements as a string
+		/**
+		 * Replace space with non-breaking space in second element.
+		 * Returns first, second, and last elements as a string.
+		 */
 		private static function get_first_second_last( $match ) {
+
 			$last_num = count( $match ) - 1;
+
 			$second_str = str_replace( ' ', '&nbsp;', $match[2] );
+
 			return $match[1] . $second_str . $match[$last_num];
 		}
 	}
 
         global $nbsp_french;
+
 	$nbsp_french = NbspFrench::get_instance();
 }
