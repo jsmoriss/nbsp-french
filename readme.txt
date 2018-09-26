@@ -25,7 +25,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = Filters for Developers =
 
-*'nbsp_french_add_filters' ( array $filter_names )*
+**'nbsp_french_add_filters' ( array $filter_names )**
 
 An associative array of filter names (and priority) for the plugin to hook.
 
@@ -44,10 +44,11 @@ array(
 To hook additional filters, include their names (and priority) in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php:
 
 <pre>
-add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
+add_filter( 'another_text_filter_name',
+	array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
 
-*'nbsp_french_currencies' ( $regex )*
+**'nbsp_french_currencies' ( $regex )**
 
 A regular expression of recognized currency symbols.
 

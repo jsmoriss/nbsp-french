@@ -21,7 +21,7 @@
 
 <h4>Filters for Developers</h4>
 
-<p><em>'nbsp_french_add_filters' ( array $filter_names )</em></p>
+<p><strong>'nbsp_french_add_filters' ( array $filter_names )</strong></p>
 
 <p>An associative array of filter names (and priority) for the plugin to hook.</p>
 
@@ -40,10 +40,11 @@ array(
 <p>To hook additional filters, include their names (and priority) in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php:</p>
 
 <pre>
-add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
+add_filter( 'another_text_filter_name',
+    array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
 
-<p><em>'nbsp_french_currencies' ( $regex )</em></p>
+<p><strong>'nbsp_french_currencies' ( $regex )</strong></p>
 
 <p>A regular expression of recognized currency symbols.</p>
 
