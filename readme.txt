@@ -17,7 +17,7 @@ Adds a non-breaking space between words and punctuation marks to avoid inappropr
 
 == Description ==
 
-This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, and text widget &mdash; skipping over pre-formatted code blocks, styles and scripts. 
+This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description &mdash; skipping over pre-formatted code blocks, styles and scripts. 
 
 If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
@@ -25,18 +25,19 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = Filters for Developers =
 
-*'nbsp_french_add_filters' ( array $names )*
+*'nbsp_french_add_filters' ( array $filter_names )*
 
-An associative array of filter names (and priority) for the plugin to hook by default.
+An associative array of filter names (and priority) for the plugin to hook.
 
 <pre>
 array(
-	'the_title' => 10,
-	'the_content' => 10,
-	'the_excerpt' => 10,
-	'comment_text' => 10,
-	'widget_title' => 10,
-	'widget_text' => 10,
+	'the_title'                     => 10,
+	'the_content'                   => 10,
+	'the_excerpt'                   => 10,
+	'comment_text'                  => 10,
+	'widget_title'                  => 10,
+	'widget_text'                   => 10,
+	'woocommerce_short_description' => 10,
 )
 </pre>
 
@@ -48,7 +49,7 @@ add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 )
 
 *'nbsp_french_currencies' ( $regex )*
 
-A list of recognized currencies.
+A regular expression of recognized currency symbols.
 
 == Installation ==
 
@@ -96,12 +97,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.8.2 (2017/04/08)**
+**Version 1.9.0 (2018/09/26)**
 
 * *New Features*
 	* None.
 * *Improvements*
-	* None.
+	* Added a hook for the 'woocommerce_short_description' filter.
 * *Bugfixes*
 	* None.
 * *Developer Notes*
@@ -109,7 +110,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.8.2 =
+= 1.9.0 =
 
-(2017/04/08) Maintenance release.
+(2018/09/26) Added a hook for the 'woocommerce_short_description' filter.
 
