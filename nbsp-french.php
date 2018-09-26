@@ -13,7 +13,7 @@
  * Requires PHP: 5.4
  * Requires At Least: 3.8
  * Tested Up To: 4.9.8
- * Version: 1.8.2
+ * Version: 1.9.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -36,12 +36,13 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		private static $instance;
 
 		private static $filters = array(
-			'the_title'    => 10,
-			'the_content'  => 10,
-			'the_excerpt'  => 10,
-			'comment_text' => 10,
-			'widget_title' => 10,
-			'widget_text'  => 10,
+			'the_title'                     => 10,
+			'the_content'                   => 10,
+			'the_excerpt'                   => 10,
+			'comment_text'                  => 10,
+			'widget_title'                  => 10,
+			'widget_text'                   => 10,
+			'woocommerce_short_description' => 10,
 		);
 
 		public function __construct() {
@@ -66,43 +67,58 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
 		}
 
-		public static function filter( $text ) {
-			$new_text = '';
-			$has_french = $default = strpos( $text, '<!--:fr-->' ) !== false ? false : true;
+		public static function filter( $original_text ) {
 
-			// http://character-code.com/currency-html-codes.php
-			$currencies = apply_filters( 'nbsp_french_currencies',
-				'¤|&curren;|\$|¢|&cent;|£|&pound;|¥|&yen;|₣|&#8355;|€|&euro;' );
+			$fixed_text = '';
+			$has_french = $default_is_french = strpos( $original_text, '<!--:fr-->' ) !== false ? false : true;
 
-			// add newlines before/after HTML comments, pre, script, and style code blocks
-			$text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $text );
-			$text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $text );
+			/**
+			 * http://character-code.com/currency-html-codes.php.
+			 */
+			$currencies = apply_filters( 'nbsp_french_currencies', '¤|&curren;|\$|¢|&cent;|£|&pound;|¥|&yen;|₣|&#8355;|€|&euro;' );
+
+			/**
+			 * Add newlines before/after HTML comments, pre, script, and style code blocks.
+			 */
+			$original_text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $original_text );
+			$original_text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $original_text );
 		
 			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array( 
-				'/(«|&laquo;)( )(\w)/u',		// quotation followed by word
-				'/(\w)( )([!\?:;%»]|&raquo;)/u',	// word followed by puntuation
-				'/([\.!\?])( )(»|&raquo;)/u',		// punctuation followed by quotation
+				'/(«|&laquo;)( )(\w)/u',		// Quotation followed by word.
+				'/(\w)( )([!\?:;%»]|&raquo;)/u',	// Word followed by puntuation.
+				'/([\.!\?])( )(»|&raquo;)/u',		// Punctuation followed by quotation.
 				'/( \d{1,3})(( \d{3,3})+)([\., ])/u',	// 1 000, 1 000 000, etc.
-				'/(\d)( )(' . $currencies . ')/u',	// number followed by currency symbol
+				'/(\d)( )(' . $currencies . ')/u',	// Number followed by currency symbol.
 			) );
 		
-			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $text) as $line) {
+			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $original_text ) as $line ) {
 		
 				if ( ! $has_french && strpos( $line, '<!--:fr-->' ) ) {
-					$has_french = $default = true;
-					$new_text .= $line . "\n";
+
+					$has_french = $default_is_french = true;
+					$fixed_text .= $line . "\n";
+
 					continue;
+
 				} elseif ( $has_french && strpos( $line, '<!--:-->' ) ) {
-					$has_french = $default = false;
-					$new_text .= $line . "\n";
+
+					$has_french = $default_is_french = false;
+					$fixed_text .= $line . "\n";
+
 					continue;
+
 				} elseif ( preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) ) {
-					$has_french = $default;	// back to default
-					$new_text .= $line . "\n";
+
+					$has_french = $default_is_french;	// back to default
+					$fixed_text .= $line . "\n";
+
 					continue;
+
 				} elseif ( preg_match( '/<(!--|pre|script|style)/i', $line ) ) {
+
 					$has_french = false;
-					$new_text .= $line . "\n";
+					$fixed_text .= $line . "\n";
+
 					continue;
 				}
 		
@@ -110,10 +126,10 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 					$line = preg_replace_callback( $pattern, array( __CLASS__, 'get_first_second_last' ), $line );
 				}
 
-				$new_text .= $line . "\n";
+				$fixed_text .= $line . "\n";
 			}
 
-			return rtrim( $new_text );	// remove last newline character
+			return rtrim( $fixed_text );	// remove last newline character
 		}
 
 		/**
@@ -126,7 +142,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 			$second_str = str_replace( ' ', '&nbsp;', $match[2] );
 
-			return $match[1] . $second_str . $match[$last_num];
+			return $match[1] . $second_str . $match[ $last_num ];
 		}
 	}
 
