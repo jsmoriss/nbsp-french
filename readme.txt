@@ -100,13 +100,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 **Version 1.9.0 (2018/09/26)**
 
-* *New Features*
+* **New Features**
 	* None.
-* *Improvements*
+* **Improvements**
 	* Added a hook for the 'woocommerce_short_description' filter.
-* *Bugfixes*
+* **Bugfixes**
 	* None.
-* *Developer Notes*
+* **Developer Notes**
 	* Maintenance release.
 
 == Upgrade Notice ==
