@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
 Tags: non-breaking, french, content, line-break, punctuation, space, new line, line break
 Contributors: jsmoriss
 Requires PHP: 5.5
-Requires At Least: 3.9
+Requires At Least: 4.0
 Tested Up To: 5.3.2
 Stable Tag: 1.9.0
 
