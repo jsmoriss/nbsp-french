@@ -47,7 +47,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 		public function __construct() {
 
-			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 
 			foreach ( apply_filters( 'nbsp_french_add_filters', self::$filters ) as $filter_name => $filter_prio ) {
 				add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
@@ -63,7 +63,16 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			return self::$instance;
 		}
 
-		public static function load_textdomain() {
+		public static function init_textdomain() {
+
+			static $loaded = null;
+
+			if ( null !== $loaded ) {
+				return;
+			}
+
+			$loaded = true;
+
 			load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
 		}
 
