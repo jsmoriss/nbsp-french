@@ -33,7 +33,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 	class NbspFrench {
 
-		private static $instance;
+		private static $instance = null;
 
 		private static $filters = array(
 			'the_title'                     => 10,
@@ -56,7 +56,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 		public static function &get_instance() {
 
-			if ( ! isset( self::$instance ) ) {
+			if ( null === self::$instance ) {
 				self::$instance = new self;
 			}
 
