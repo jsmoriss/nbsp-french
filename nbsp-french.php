@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.2
  * Tested Up To: 5.4.1
- * Version: 1.9.0
+ * Version: 1.10.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -50,6 +50,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 
 			foreach ( apply_filters( 'nbsp_french_add_filters', self::$filters ) as $filter_name => $filter_prio ) {
+
 				add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
 			}
 		}
@@ -57,6 +58,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
+
 				self::$instance = new self;
 			}
 
@@ -68,6 +70,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			static $loaded = null;
 
 			if ( null !== $loaded ) {
+
 				return;
 			}
 
@@ -105,6 +108,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				if ( ! $has_french && strpos( $line, '<!--:fr-->' ) ) {
 
 					$has_french = $default_is_french = true;
+
 					$fixed_text .= $line . "\n";
 
 					continue;
@@ -112,6 +116,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				} elseif ( $has_french && strpos( $line, '<!--:-->' ) ) {
 
 					$has_french = $default_is_french = false;
+
 					$fixed_text .= $line . "\n";
 
 					continue;
@@ -119,6 +124,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				} elseif ( preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) ) {
 
 					$has_french = $default_is_french;	// back to default
+
 					$fixed_text .= $line . "\n";
 
 					continue;
@@ -126,12 +132,14 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				} elseif ( preg_match( '/<(!--|pre|script|style)/i', $line ) ) {
 
 					$has_french = false;
+
 					$fixed_text .= $line . "\n";
 
 					continue;
 				}
 		
 				if ( $has_french ) {
+
 					$line = preg_replace_callback( $pattern, array( __CLASS__, 'get_first_second_last' ), $line );
 				}
 
@@ -149,9 +157,9 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 			$last_num = count( $match ) - 1;
 
-			$second_str = str_replace( ' ', '&nbsp;', $match[2] );
+			$second_str = str_replace( ' ', '&nbsp;', $match[ 2 ] );
 
-			return $match[1] . $second_str . $match[ $last_num ];
+			return $match[ 1 ] . $second_str . $match[ $last_num ];
 		}
 	}
 
