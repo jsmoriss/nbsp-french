@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
 Tested Up To: 5.4.1
-Stable Tag: 1.9.0
+Stable Tag: 1.10.0
 
 Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
 
@@ -98,20 +98,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.9.0 (2018/09/26)**
+**Version 1.10.0 (2020/05/08)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Added a hook for the 'woocommerce_short_description' filter.
+	* None.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Maintenance release.
+	* Maintenance release - minor code formatting changes.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.2.
 
 == Upgrade Notice ==
 
-= 1.9.0 =
+= 1.10.0 =
 
-(2018/09/26) Added a hook for the 'woocommerce_short_description' filter.
+(2020/05/08) Maintenance release - minor code formatting changes.
 
