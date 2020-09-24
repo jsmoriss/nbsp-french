@@ -94,7 +94,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			 */
 			$original_text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $original_text );
 			$original_text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $original_text );
-		
+
 			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array( 
 				'/(«|&laquo;)( )(\w)/u',		// Quotation followed by word.
 				'/(\w)( )([!\?:;%»]|&raquo;)/u',	// Word followed by puntuation.
@@ -102,9 +102,9 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				'/( \d{1,3})(( \d{3,3})+)([\., ])/u',	// 1 000, 1 000 000, etc.
 				'/(\d)( )(' . $currencies . ')/u',	// Number followed by currency symbol.
 			) );
-		
+
 			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $original_text ) as $line ) {
-		
+
 				if ( ! $has_french && strpos( $line, '<!--:fr-->' ) ) {
 
 					$has_french = $default_is_french = true;
@@ -137,7 +137,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 					continue;
 				}
-		
+
 				if ( $has_french ) {
 
 					$line = preg_replace_callback( $pattern, array( __CLASS__, 'get_first_second_last' ), $line );
