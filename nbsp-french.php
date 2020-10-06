@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.4
  * Tested Up To: 5.5.1
- * Version: 1.10.0
+ * Version: 1.11.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -47,7 +47,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 		public function __construct() {
 
-			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
+			add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 
 			foreach ( apply_filters( 'nbsp_french_add_filters', self::$filters ) as $filter_name => $filter_prio ) {
 
@@ -65,18 +65,18 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			return self::$instance;
 		}
 
-		public static function init_textdomain() {
+		public function init_textdomain() {
 
-			static $loaded = null;
+			static $local_cache = null;
 
-			if ( null !== $loaded ) {
+			if ( null === $local_cache ) {
 
-				return;
+				$local_cache = 'nbsp-french';
+
+				load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
 			}
 
-			$loaded = true;
-
-			load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
+			return $local_cache;
 		}
 
 		public static function filter( $original_text ) {
