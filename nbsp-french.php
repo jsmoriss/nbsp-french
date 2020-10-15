@@ -68,16 +68,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 		public function init_textdomain() {
 
-			static $local_cache = null;
-
-			if ( null === $local_cache ) {
-
-				$local_cache = 'nbsp-french';
-
-				load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
-			}
-
-			return $local_cache;
+			load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
 		}
 
 		public static function filter( $original_text ) {
