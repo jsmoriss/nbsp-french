@@ -30,7 +30,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 An associative array of filter names (and priority) for the plugin to hook.
 
 <pre>
-array(
+$filter_names = array(
 	'the_title'                     => 10,
 	'the_content'                   => 10,
 	'the_excerpt'                   => 10,
@@ -38,14 +38,13 @@ array(
 	'widget_title'                  => 10,
 	'widget_text'                   => 10,
 	'woocommerce_short_description' => 10,
-)
+);
 </pre>
 
-To hook additional filters, include their names (and priority) in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php:
+To hook additional filters, include their names (and priority) in the `nbsp_french_add_filters` array, or hook them individually in your functions.php:
 
 <pre>
-add_filter( 'another_text_filter_name',
-	array( 'NbspFrench', 'filter' ), 10, 1 );
+add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
 
 **'nbsp_french_currencies' ( $regex )**
@@ -98,6 +97,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.12.0-dev.2 (2020/10/19)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added a non-breaking-space between a closing parentheses and punctuation.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.4.
+
 **Version 1.11.0 (2020/10/07)**
 
 Maintenance release.
@@ -115,6 +128,10 @@ Maintenance release.
 	* WordPress v4.4.
 
 == Upgrade Notice ==
+
+= 1.12.0-dev.2 =
+
+(2020/10/19) Added a non-breaking-space between a closing parentheses and punctuation.
 
 = 1.11.0 =
 

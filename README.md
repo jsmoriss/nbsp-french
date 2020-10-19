@@ -27,7 +27,7 @@
 <p>An associative array of filter names (and priority) for the plugin to hook.</p>
 
 <pre>
-array(
+$filter_names = array(
     'the_title'                     => 10,
     'the_content'                   => 10,
     'the_excerpt'                   => 10,
@@ -35,14 +35,13 @@ array(
     'widget_title'                  => 10,
     'widget_text'                   => 10,
     'woocommerce_short_description' => 10,
-)
+);
 </pre>
 
-<p>To hook additional filters, include their names (and priority) in the 'nbsp_french_add_filters' array, or hook them individually in your functions.php:</p>
+<p>To hook additional filters, include their names (and priority) in the <code>nbsp_french_add_filters</code> array, or hook them individually in your functions.php:</p>
 
 <pre>
-add_filter( 'another_text_filter_name',
-    array( 'NbspFrench', 'filter' ), 10, 1 );
+add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
 
 <p><strong>'nbsp_french_currencies' ( $regex )</strong></p>
