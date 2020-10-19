@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.4
  * Tested Up To: 5.5.1
- * Version: 1.11.0
+ * Version: 1.12.0-dev.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -71,10 +71,10 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			load_plugin_textdomain( 'nbsp-french', false, 'nbsp-french/languages/' );
 		}
 
-		public static function filter( $original_text ) {
+		public static function filter( $html ) {
 
-			$fixed_text = '';
-			$has_french = $default_is_french = strpos( $original_text, '<!--:fr-->' ) !== false ? false : true;
+			$fixed_html = '';
+			$has_french = $default_is_french = strpos( $html, '<!--:fr-->' ) !== false ? false : true;
 
 			/**
 			 * http://character-code.com/currency-html-codes.php.
@@ -84,24 +84,29 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			/**
 			 * Add newlines before/after HTML comments, pre, script, and style code blocks.
 			 */
-			$original_text = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $original_text );
-			$original_text = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $original_text );
+			$html = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $html );
+			$html = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $html );
 
+			/**
+			 * Spaces will be replaced by '&nbsp;' in the second set of parentheses (ie. $match[ 2 ]).
+			 *
+			 * PCRE modifier 'u' is used to treat pattern and subject strings as UTF-8.
+			 */
 			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array( 
 				'/(«|&laquo;)( )(\w)/u',		// Quotation followed by word.
-				'/(\w)( )([!\?:;%»]|&raquo;)/u',	// Word followed by puntuation.
+				'/(\w|\))( )([!\?:;%»]|&raquo;)/u',	// Word or parentheses followed by puntuation.
 				'/([\.!\?])( )(»|&raquo;)/u',		// Punctuation followed by quotation.
 				'/( \d{1,3})(( \d{3,3})+)([\., ])/u',	// 1 000, 1 000 000, etc.
 				'/(\d)( )(' . $currencies . ')/u',	// Number followed by currency symbol.
 			) );
 
-			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $original_text ) as $line ) {
+			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $html ) as $line ) {
 
 				if ( ! $has_french && strpos( $line, '<!--:fr-->' ) ) {
 
 					$has_french = $default_is_french = true;
 
-					$fixed_text .= $line . "\n";
+					$fixed_html .= $line . "\n";
 
 					continue;
 
@@ -109,7 +114,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 					$has_french = $default_is_french = false;
 
-					$fixed_text .= $line . "\n";
+					$fixed_html .= $line . "\n";
 
 					continue;
 
@@ -117,7 +122,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 					$has_french = $default_is_french;	// back to default
 
-					$fixed_text .= $line . "\n";
+					$fixed_html .= $line . "\n";
 
 					continue;
 
@@ -125,7 +130,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 					$has_french = false;
 
-					$fixed_text .= $line . "\n";
+					$fixed_html .= $line . "\n";
 
 					continue;
 				}
@@ -135,14 +140,15 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 					$line = preg_replace_callback( $pattern, array( __CLASS__, 'get_first_second_last' ), $line );
 				}
 
-				$fixed_text .= $line . "\n";
+				$fixed_html .= $line . "\n";
 			}
 
-			return rtrim( $fixed_text );	// remove last newline character
+			return rtrim( $fixed_html );	// Remove last newline character.
 		}
 
 		/**
 		 * Replace space with non-breaking space in second element.
+		 *
 		 * Returns first, second, and last elements as a string.
 		 */
 		private static function get_first_second_last( $match ) {
