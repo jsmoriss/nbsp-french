@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.4
  * Tested Up To: 5.5.1
- * Version: 1.12.0-dev.2
+ * Version: 1.12.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -93,7 +93,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			 * PCRE modifier 'u' is used to treat pattern and subject strings as UTF-8.
 			 */
 			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array( 
-				'/(«|&laquo;)( )(\w)/u',		// Quotation followed by word.
+				'/(«|&laquo;)( )(\(|\w)/u',		// Quotation followed by parentheses or word.
 				'/(\w|\))( )([!\?:;%»]|&raquo;)/u',	// Word or parentheses followed by puntuation.
 				'/([\.!\?])( )(»|&raquo;)/u',		// Punctuation followed by quotation.
 				'/( \d{1,3})(( \d{3,3})+)([\., ])/u',	// 1 000, 1 000 000, etc.
