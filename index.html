@@ -54,7 +54,7 @@
 
 <p><strong>'nbsp_french_add_filters' ( array $filter_names )</strong></p>
 
-<p>An associative array of filter names (and priority) for the plugin to hook.</p>
+<p>An associative array of filter names and priority to hook.</p>
 
 <pre>
 $filter_names = array(
@@ -68,10 +68,10 @@ $filter_names = array(
 );
 </pre>
 
-<p>To hook additional filters, include their names (and priority) in the <code>nbsp_french_add_filters</code> array, or hook them individually in your functions.php:</p>
+<p>To hook additional filters, include their names and priority in the <code>nbsp_french_add_filters</code> array, or hook them individually in your functions.php:</p>
 
 <pre>
-add_filter( 'another_text_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
+add_filter( 'a_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
 </pre>
 
 <p><strong>'nbsp_french_currencies' ( $regex )</strong></p>
