@@ -34,7 +34,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 	class NbspFrench {
 
-		private static $instance = null;
+		private static $instance = null;	// NbspFrench class object.
 
 		private static $filters = array(
 			'the_title'                     => 10,
