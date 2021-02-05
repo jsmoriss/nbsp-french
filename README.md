@@ -20,33 +20,9 @@
 
 <p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
 
-<h4>Filters for Developers</h4>
+<h4>Need a Boost to your Social and Search Ranking?</h4>
 
-<p><strong>'nbsp_french_add_filters' ( array $filter_names )</strong></p>
-
-<p>An associative array of filter names and priority to hook.</p>
-
-<pre>
-$filter_names = array(
-    'the_title'                     => 10,
-    'the_content'                   => 10,
-    'the_excerpt'                   => 10,
-    'comment_text'                  => 10,
-    'widget_title'                  => 10,
-    'widget_text'                   => 10,
-    'woocommerce_short_description' => 10,
-);
-</pre>
-
-<p>To hook additional filters, include their names and priority in the <code>nbsp_french_add_filters</code> array, or hook them individually in your functions.php:</p>
-
-<pre>
-add_filter( 'a_filter_name', array( 'NbspFrench', 'filter' ), 10, 1 );
-</pre>
-
-<p><strong>'nbsp_french_currencies' ( $regex )</strong></p>
-
-<p>A regular expression of recognized currency symbols.</p>
+<p>Check out <a href="https://wordpress.org/plugins/wpsso/">the WPSSO Core plugin</a> to present your content at its best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.</p>
 
 
 <h2>Installation</h2>
