@@ -17,11 +17,11 @@ Adds a non-breaking space between words and punctuation marks to avoid inappropr
 
 == Description ==
 
-This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description &mdash; skipping over pre-formatted code blocks, styles and scripts. 
+This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description - skipping over pre-formatted code blocks, styles and scripts. 
 
 If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
-There are no plugin settings &mdash; simply *install* and *activate* the plugin.
+There are no plugin settings - simply *install* and *activate* the plugin.
 
 = Need a Boost to your Social and Search Ranking? =
 

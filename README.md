@@ -14,11 +14,11 @@
 
 <h2>Description</h2>
 
-<p>This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description &mdash; skipping over pre-formatted code blocks, styles and scripts.</p>
+<p>This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description - skipping over pre-formatted code blocks, styles and scripts.</p>
 
 <p>If the <code>&lt;!--:fr--&gt;</code> HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the <code>&lt;!--:fr--&gt;</code> and <code>&lt;!--:--&gt;</code> HTML tags.</p>
 
-<p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
+<p>There are no plugin settings - simply <em>install</em> and <em>activate</em> the plugin.</p>
 
 <h4>Need a Boost to your Social and Search Ranking?</h4>
 
