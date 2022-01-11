@@ -20,7 +20,6 @@
 
 <p>There are no plugin settings - simply install and activate the plugin.</p>
 
-
 <h2>Installation</h2>
 
 <h4>Automated Install</h4>
@@ -48,10 +47,4 @@
 <li>Click on the <em>Install Now</em> button.</li>
 <li>Click the <em>Activate Plugin</em> link.</li>
 </ol>
-
-
-<h2>Frequently Asked Questions</h2>
-
-
-
 
