@@ -47,6 +47,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.12.1-dev.1 (2022/12/13)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Fix to exclude possible HTML tag style attribute values like `style="display:none !important;"`.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+
 **Version 1.12.0 (2020/10/20)**
 
 * **New Features**
@@ -62,6 +76,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.2.
 
 == Upgrade Notice ==
+
+= 1.12.1-dev.1 =
+
+(2022/12/13) Fix to exclude possible HTML tag style attribute values like `style="display:none !important;"`.
 
 = 1.12.0 =
 
