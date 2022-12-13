@@ -13,7 +13,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
- * Version: 1.12.0
+ * Version: 1.12.1-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -93,11 +93,11 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			 * PCRE modifier 'u' is used to treat pattern and subject strings as UTF-8.
 			 */
 			$pattern = apply_filters( 'nbsp_french_preg_first_second_last', array(
-				'/(«|&laquo;)( )(\(|\w)/u',		// Quotation followed by parentheses or word.
-				'/(\w|\))( )([!\?:;%»]|&raquo;)/u',	// Word or parentheses followed by puntuation.
-				'/([\.!\?])( )(»|&raquo;)/u',		// Punctuation followed by quotation.
-				'/( \d{1,3})(( \d{3,3})+)([\., ])/u',	// 1 000, 1 000 000, etc.
-				'/(\d)( )(' . $currencies . ')/u',	// Number followed by currency symbol.
+				'/(«|&laquo;)( )(\(|\w)/u',			// Quotation followed by parentheses or word.
+				'/(\w|\))( )([!\?:;%»]|&raquo;)/u',		// Word or parentheses followed by puntuation.
+				'/([\.!\?])( )(»|&raquo;)/u',			// Punctuation followed by quotation.
+				'/([ >]\d{1,3})(( \d{3,3})+)([\., <])/u',	// 1 000, 1 000 000, etc.
+				'/(\d)( )(' . $currencies . ')/u',		// Number followed by currency symbol.
 			) );
 
 			foreach ( preg_split( '/((\r?\n)|(\r\n?))/', $html ) as $line ) {
@@ -137,7 +137,19 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 				if ( $has_french ) {
 
-					$line = preg_replace_callback( $pattern, array( __CLASS__, 'get_first_second_last' ), $line );
+					$line = preg_replace_callback( $pattern, array( __CLASS__, 'replace_second_match' ), $line, $limit = -1, $count );
+		
+					if ( $count > 0 ) {
+
+						/**
+						 * Unreplace style="display:none&nbsp;!important" attribute values.
+						 */
+						if ( false !== strpos( $line, 'style=' ) ) {
+
+							$line = preg_replace_callback( '/(<[^>]*style=["\'])([^"\']*&nbsp;[^"\']*)([\'"][^>]*>)/u',
+								array( __CLASS__, 'unreplace_second_match' ), $line, $limit = -1, $count );
+						}
+					}
 				}
 
 				$fixed_html .= $line . "\n";
@@ -151,13 +163,18 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		 *
 		 * Returns first, second, and last elements as a string.
 		 */
-		private static function get_first_second_last( $match ) {
+		private static function replace_second_match( $match, $search = ' ', $replace = '&nbsp;' ) {
 
 			$last_num = count( $match ) - 1;
 
-			$second_str = str_replace( ' ', '&nbsp;', $match[ 2 ] );
+			$second_str = str_replace( $search, $replace, $match[ 2 ] );
 
-			return $match[ 1 ] . $second_str . $match[ $last_num ];
+			return  $match[ 1 ] . $second_str . $match[ $last_num ];
+		}
+		
+		private static function unreplace_second_match( $match ) {
+
+			return self::replace_second_match( $match, $search = '&nbsp;', $replace = ' ' );
 		}
 	}
 
