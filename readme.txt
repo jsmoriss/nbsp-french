@@ -1,12 +1,12 @@
-=== JSM's Non-Breaking Space for French Content ===
-Plugin Name: JSM's Non-Breaking Space for French Content
+=== JSM's Non-Breaking Space (nbsp) for French Content ===
+Plugin Name: JSM's Non-Breaking Space (nbsp) for French Content
 Plugin Slug: nbsp-french
 Text Domain: nbsp-french
 Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
-Tags: non-breaking, french, content, line-break, punctuation, space, new line, line break
+Tags: nbsp; non-breaking, french, content, line-break, punctuation
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
@@ -17,7 +17,7 @@ Adds a non-breaking space between words and punctuation marks to avoid inappropr
 
 == Description ==
 
-This plugin adds non-breaking spaces required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description - skipping over pre-formatted code blocks, styles and scripts.
+This plugin adds non-breaking spaces (ie. &amp;nbsp;) required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description - skipping over pre-formatted code blocks, styles and scripts.
 
 If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
