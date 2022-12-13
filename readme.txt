@@ -17,7 +17,7 @@ Adds a non-breaking space between (nbsp) words and punctuation marks to avoid in
 
 == Description ==
 
-This plugin converts spaces to HTML non-breaking space entities (ie. `&amp;nbsp;`) as by the French language for the content, excerpt, comments, text widget, and WooCommerce short description.
+This plugin converts spaces to HTML non-breaking space entities (ie. `&amp;nbsp;`) in the content, excerpt, comments, text widget, and WooCommerce short description as required by French language punctuation rules.
 
 If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
