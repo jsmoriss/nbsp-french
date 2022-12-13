@@ -23,8 +23,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Adds a non-breaking space between words and punctuation marks to avoid "
-"inappropriate line-breaks in French."
+"Adds a non-breaking space (nbsp) between words and punctuation marks to "
+"avoid inappropriate line-breaks in French."
 msgstr ""
 
 #. Author of the plugin/theme
