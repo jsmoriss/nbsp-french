@@ -47,7 +47,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.1-dev.1 (2022/12/13)**
+**Version 1.12.1-rc.1 (2022/12/13)**
 
 * **New Features**
 	* None.
@@ -77,7 +77,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.12.1-dev.1 =
+= 1.12.1-rc.1 =
 
 (2022/12/13) Fix to exclude possible HTML tag style attribute values like `style="display:none !important;"`.
 
