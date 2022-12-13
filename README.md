@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Non-Breaking Space (nbsp) for French Content</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Adds a non-breaking space between (nbsp) words and punctuation marks to avoid inappropriate line-breaks in French.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.12.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.2 or newer</td></tr>
@@ -14,7 +14,7 @@
 
 <h2>Description</h2>
 
-<p>This plugin adds non-breaking spaces (ie. &amp;nbsp;) required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description - skipping over pre-formatted code blocks, styles and scripts.</p>
+<p>This plugin converts spaces to HTML non-breaking space entities (ie. &amp;nbsp;) as by the French language for the content, excerpt, comments, text widget, and WooCommerce short description.</p>
 
 <p>If the <code>&lt;!--:fr--&gt;</code> HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the <code>&lt;!--:fr--&gt;</code> and <code>&lt;!--:--&gt;</code> HTML tags.</p>
 

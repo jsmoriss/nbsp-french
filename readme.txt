@@ -13,11 +13,11 @@ Requires At Least: 5.2
 Tested Up To: 6.1.1
 Stable Tag: 1.12.1
 
-Adds a non-breaking space between words and punctuation marks to avoid inappropriate line-breaks in French.
+Adds a non-breaking space between (nbsp) words and punctuation marks to avoid inappropriate line-breaks in French.
 
 == Description ==
 
-This plugin adds non-breaking spaces (ie. &amp;nbsp;) required by the French language in the content, excerpt, comments, text widget, and WooCommerce short description - skipping over pre-formatted code blocks, styles and scripts.
+This plugin converts spaces to HTML non-breaking space entities (ie. &amp;nbsp;) as by the French language for the content, excerpt, comments, text widget, and WooCommerce short description.
 
 If the `<!--:fr-->` HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the `<!--:fr-->` and `<!--:-->` HTML tags.
 
