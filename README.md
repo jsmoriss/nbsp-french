@@ -14,7 +14,7 @@
 
 <h2>Description</h2>
 
-<p>This plugin converts spaces to HTML non-breaking space entities (ie. &amp;nbsp;) as by the French language for the content, excerpt, comments, text widget, and WooCommerce short description.</p>
+<p>This plugin converts spaces to HTML non-breaking space entities (ie. <code>&amp;amp;nbsp;</code>) as by the French language for the content, excerpt, comments, text widget, and WooCommerce short description.</p>
 
 <p>If the <code>&lt;!--:fr--&gt;</code> HTML  tag is found (used by some multilingual plugins), non-breaking spaces are added only between the <code>&lt;!--:fr--&gt;</code> and <code>&lt;!--:--&gt;</code> HTML tags.</p>
 
