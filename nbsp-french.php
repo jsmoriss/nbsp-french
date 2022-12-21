@@ -138,7 +138,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 				if ( $has_french ) {
 
 					$line = preg_replace_callback( $pattern, array( __CLASS__, 'replace_second_match' ), $line, $limit = -1, $count );
-		
+
 					if ( $count > 0 ) {
 
 						/**
@@ -171,7 +171,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 			return  $match[ 1 ] . $second_str . $match[ $last_num ];
 		}
-		
+
 		private static function unreplace_second_match( $match ) {
 
 			return self::replace_second_match( $match, $search = '&nbsp;', $replace = ' ' );
