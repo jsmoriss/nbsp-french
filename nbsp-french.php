@@ -137,9 +137,11 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 				if ( $has_french ) {
 
+					$count = null;
+
 					$line = preg_replace_callback( $pattern, array( __CLASS__, 'replace_second_match' ), $line, $limit = -1, $count );
 
-					if ( $count > 0 ) {
+					if ( $count ) {
 
 						/**
 						 * Unreplace style="display:none&nbsp;!important" attribute values.
