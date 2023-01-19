@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Plugin Name: JSM's Non-Breaking Space (nbsp) for French Content
  * Text Domain: nbsp-french
  * Domain Path: /languages
