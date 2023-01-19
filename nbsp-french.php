@@ -76,18 +76,18 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			$fixed_html = '';
 			$has_french = $default_is_french = strpos( $html, '<!--:fr-->' ) !== false ? false : true;
 
-			/**
+			/*
 			 * http://character-code.com/currency-html-codes.php.
 			 */
 			$currencies = apply_filters( 'nbsp_french_currencies', '¤|&curren;|\$|¢|&cent;|£|&pound;|¥|&yen;|₣|&#8355;|€|&euro;' );
 
-			/**
+			/*
 			 * Add newlines before/after HTML comments, pre, script, and style code blocks.
 			 */
 			$html = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $html );
 			$html = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $html );
 
-			/**
+			/*
 			 * Spaces will be replaced by '&nbsp;' in the second set of parentheses (ie. $match[ 2 ]).
 			 *
 			 * PCRE modifier 'u' is used to treat pattern and subject strings as UTF-8.
@@ -143,7 +143,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 					if ( $count ) {
 
-						/**
+						/*
 						 * Unreplace style="display:none&nbsp;!important" attribute values.
 						 */
 						if ( false !== strpos( $line, 'style=' ) ) {
@@ -160,7 +160,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			return rtrim( $fixed_html );	// Remove last newline character.
 		}
 
-		/**
+		/*
 		 * Replace space with non-breaking space in second element.
 		 *
 		 * Returns first, second, and last elements as a string.
