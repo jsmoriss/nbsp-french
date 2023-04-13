@@ -11,7 +11,7 @@
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Adds a non-breaking space (nbsp) between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires PHP: 7.2
- * Requires At Least: 5.4
+ * Requires At Least: 5.5
  * Tested Up To: 6.2.0
  * Version: 1.12.1
  *
