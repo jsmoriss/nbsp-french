@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Non-Breaking Space (nbsp) for French Content</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Adds a non-breaking space between (nbsp) words and punctuation marks to avoid inappropriate line-breaks in French.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.12.1</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.13.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.5 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.2.0</td></tr>

@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.5
 Tested Up To: 6.2.0
-Stable Tag: 1.12.1
+Stable Tag: 1.13.0
 
 Adds a non-breaking space between (nbsp) words and punctuation marks to avoid inappropriate line-breaks in French.
 
