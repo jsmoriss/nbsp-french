@@ -13,7 +13,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.5
  * Tested Up To: 6.2.0
- * Version: 1.12.1
+ * Version: 1.13.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -37,13 +37,13 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		private static $instance = null;	// NbspFrench class object.
 
 		private static $filters = array(
-			'the_title'                     => 10,
-			'the_content'                   => 10,
-			'the_excerpt'                   => 10,
-			'comment_text'                  => 10,
-			'widget_title'                  => 10,
-			'widget_text'                   => 10,
-			'woocommerce_short_description' => 10,
+			'the_title'                     => 100,
+			'the_content'                   => 100,
+			'the_excerpt'                   => 100,
+			'comment_text'                  => 100,
+			'widget_title'                  => 100,
+			'widget_text'                   => 100,
+			'woocommerce_short_description' => 100,
 		);
 
 		public function __construct() {
@@ -82,10 +82,13 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			$currencies = apply_filters( 'nbsp_french_currencies', '¤|&curren;|\$|¢|&cent;|£|&pound;|¥|&yen;|₣|&#8355;|€|&euro;' );
 
 			/*
-			 * Add newlines before/after HTML comments, pre, script, and style code blocks.
+			 * Add newlines before/after HTML comments, pre, script, style, and svg code blocks.
+			 *
+			 * This allows us to detect these HTML sections and set $has_french to false, and then back to
+			 * $default_is_french.
 			 */
-			$html = preg_replace( '/\r?\n?<(!--|pre|script|style)/i', "\n" . '<$1', $html );
-			$html = preg_replace( '/(--|\/pre|\/script|\/style)>\r?\n?/i', '$1>' . "\n", $html );
+			$html = preg_replace( '/\r?\n?<(!--|pre|script|style|svg)/i', "\n" . '<$1', $html );
+			$html = preg_replace( '/(--|\/pre|\/script|\/style|\/svg)>\r?\n?/i', '$1>' . "\n", $html );
 
 			/*
 			 * Spaces will be replaced by '&nbsp;' in the second set of parentheses (ie. $match[ 2 ]).
@@ -118,15 +121,15 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 					continue;
 
-				} elseif ( preg_match( '/(--|\/pre|\/script|\/style)>/i', $line ) ) {
+				} elseif ( preg_match( '/(--|\/pre|\/script|\/style|\/svg)>/i', $line ) ) {
 
-					$has_french = $default_is_french;	// back to default
+					$has_french = $default_is_french;	// Back to default.
 
 					$fixed_html .= $line . "\n";
 
 					continue;
 
-				} elseif ( preg_match( '/<(!--|pre|script|style)/i', $line ) ) {
+				} elseif ( preg_match( '/<(!--|pre|script|style|svg)/i', $line ) ) {
 
 					$has_french = false;
 
