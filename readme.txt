@@ -47,41 +47,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.1 (2022/12/13)**
+**Version 1.13.0 (2023/04/21)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added 'svg' to the list of excluded HTML tags (which includes HTML comments, 'pre', 'script', and 'style').
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Fix to exclude possible HTML tag style attribute values like `style="display:none !important;"`.
+	* None.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.5.
 
-**Version 1.12.0 (2020/10/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a non-breaking-space between parentheses and punctuation.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-
 == Upgrade Notice ==
 
-= 1.12.1 =
+= 1.13.0 =
 
-(2022/12/13) Fix to exclude possible HTML tag style attribute values like `style="display:none !important;"`.
-
-= 1.12.0 =
-
-(2020/10/20) Added a non-breaking-space between parentheses and punctuation.
+(2023/04/21) Added 'svg' to the list of excluded HTML tags (which includes HTML comments, 'pre', 'script', and 'style').
 
