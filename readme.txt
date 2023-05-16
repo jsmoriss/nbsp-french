@@ -1,5 +1,5 @@
-=== JSM's Non-Breaking Space (nbsp) for French Content ===
-Plugin Name: JSM's Non-Breaking Space (nbsp) for French Content
+=== JSM Non-Breaking Space (nbsp) for French Content ===
+Plugin Name: JSM Non-Breaking Space (nbsp) for French Content
 Plugin Slug: nbsp-french
 Text Domain: nbsp-french
 Domain Path: /languages
