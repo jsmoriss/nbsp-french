@@ -1,9 +1,8 @@
-# Copyright (C) 2023 JSM's Non-Breaking Space (nbsp) for French Content
-# This file is distributed under the same license as the JSM's Non-Breaking Space (nbsp) for French Content package.
+# Copyright (C) 2023 JSM Non-Breaking Space (nbsp) for French Content
+# This file is distributed under the same license as the JSM Non-Breaking Space (nbsp) for French Content package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Non-Breaking Space (nbsp) for French Content "
-"1.13.0\n"
+"Project-Id-Version: JSM Non-Breaking Space (nbsp) for French Content 1.13.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nbsp-french\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #. Plugin Name of the plugin/theme
-msgid "JSM's Non-Breaking Space (nbsp) for French Content"
+msgid "JSM Non-Breaking Space (nbsp) for French Content"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

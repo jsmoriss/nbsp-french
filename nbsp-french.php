@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: JSM's Non-Breaking Space (nbsp) for French Content
+ * Plugin Name: JSM Non-Breaking Space (nbsp) for French Content
  * Text Domain: nbsp-french
  * Domain Path: /languages
  * Plugin URI: https://surniaulula.com/extend/plugins/nbsp-french/
