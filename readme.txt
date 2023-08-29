@@ -10,7 +10,7 @@ Tags: nbsp; non-breaking, french, content, line-break, punctuation
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.5
-Tested Up To: 6.3.0
+Tested Up To: 6.3.1
 Stable Tag: 1.13.0
 
 Adds a non-breaking space between (nbsp) words and punctuation marks to avoid inappropriate line-breaks in French.
