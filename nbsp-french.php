@@ -13,7 +13,7 @@
  * Requires PHP: 7.2.34
  * Requires At Least: 5.5
  * Tested Up To: 6.4.1
- * Version: 1.13.0
+ * Version: 1.13.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -72,6 +72,8 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		}
 
 		public static function filter( $html ) {
+
+			if ( empty( $html ) ) return $html;
 
 			$fixed_html = '';
 			$has_french = $default_is_french = strpos( $html, '<!--:fr-->' ) !== false ? false : true;
