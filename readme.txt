@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.5
 Tested Up To: 6.4.1
-Stable Tag: 1.13.0
+Stable Tag: 1.13.1
 
 Adds a non-breaking space between (nbsp) words and punctuation marks to avoid inappropriate line-breaks in French.
 
@@ -47,12 +47,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.0 (2023/04/21)**
+**Version 1.13.1 (2023/11/19)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Added 'svg' to the list of excluded HTML tags (which includes HTML comments, 'pre', 'script', and 'style').
+	* Added check for empty `$html` argument.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -63,7 +63,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.13.0 =
+= 1.13.1 =
 
-(2023/04/21) Added 'svg' to the list of excluded HTML tags (which includes HTML comments, 'pre', 'script', and 'style').
+(2023/11/19) Added check for empty `$html` argument.
 
