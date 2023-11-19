@@ -73,7 +73,10 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 
 		public static function filter( $html ) {
 
-			if ( empty( $html ) ) return $html;
+			if ( ! is_string( $html ) || '' === $html ) {	// Just in case.
+
+				return $html;
+			}
 
 			$fixed_html = '';
 			$has_french = $default_is_french = strpos( $html, '<!--:fr-->' ) !== false ? false : true;
