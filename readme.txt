@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
 Tags: nbsp; non-breaking, french, content, line-break, punctuation
 Contributors: jsmoriss
 Requires PHP: 7.2.34
-Requires At Least: 5.5
+Requires At Least: 5.8
 Tested Up To: 6.4.2
 Stable Tag: 1.13.1
 
@@ -59,7 +59,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Requires At Least**
 	* PHP v7.2.34.
-	* WordPress v5.5.
+	* WordPress v5.8.
 
 == Upgrade Notice ==
 
