@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/nbsp-french/assets/
-Tags: nbsp; non-breaking, french, content, line-break, punctuation
+Tags: french, content, line-break, punctuation, non-breaking
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
