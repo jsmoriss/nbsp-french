@@ -12,7 +12,7 @@
  * Description: Adds a non-breaking space (nbsp) between words and punctuation marks to avoid inappropriate line-breaks in French.
  * Requires PHP: 7.2.34
  * Requires At Least: 5.8
- * Tested Up To: 6.5.3
+ * Tested Up To: 6.5.4
  * Version: 1.13.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
