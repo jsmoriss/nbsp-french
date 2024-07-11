@@ -37,13 +37,13 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 		private static $instance = null;	// NbspFrench class object.
 
 		private static $filters = array(
-			'the_title'                     => 100,
-			'the_content'                   => 100,
-			'the_excerpt'                   => 100,
-			'comment_text'                  => 100,
-			'widget_title'                  => 100,
-			'widget_text'                   => 100,
-			'woocommerce_short_description' => 100,
+			'the_title'                     => 1000,
+			'the_content'                   => 1000,
+			'the_excerpt'                   => 1000,
+			'comment_text'                  => 1000,
+			'widget_title'                  => 1000,
+			'widget_text'                   => 1000,
+			'woocommerce_short_description' => 1000,
 		);
 
 		public function __construct() {
