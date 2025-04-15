@@ -79,7 +79,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			}
 
 			$fixed_html = '';
-			$has_french = $default_is_french = false !== strpos( $html, '<!--:fr-->' ) ? false : true;
+			$has_french = $default_is_french = apply_filters( 'nbsp_french_is_french', false !== strpos( $html, '<!--:fr-->' ) ? false : true );
 
 			/*
 			 * http://character-code.com/currency-html-codes.php.
