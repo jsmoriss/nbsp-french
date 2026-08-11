@@ -46,11 +46,15 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			'woocommerce_short_description' => 1000,
 		);
 
+		private $applied_filters;
+
 		public function __construct() {
 
 			add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 
-			foreach ( apply_filters( 'nbsp_french_add_filters', self::$filters ) as $filter_name => $filter_prio ) {
+			$this->applied_filters = apply_filters( 'nbsp_french_add_filters', self::$filters );
+
+			foreach ( $this->applied_filters as $filter_name => $filter_prio ) {
 
 				add_filter( $filter_name, array( __CLASS__, 'filter' ), $filter_prio );
 			}
@@ -64,6 +68,10 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			}
 
 			return self::$instance;
+		}
+
+		public function get_applied_filters() {
+			return $this->applied_filters;
 		}
 
 		public function init_textdomain() {
