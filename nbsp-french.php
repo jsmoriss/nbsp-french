@@ -40,6 +40,7 @@ if ( ! class_exists( 'NbspFrench' ) ) {
 			'the_title'                     => 1000,
 			'the_content'                   => 1000,
 			'the_excerpt'                   => 1000,
+			'get_the_excerpt'               => 1000,
 			'comment_text'                  => 1000,
 			'widget_title'                  => 1000,
 			'widget_text'                   => 1000,
