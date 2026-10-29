@@ -12,6 +12,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
+
 #. Plugin Name of the plugin/theme
 msgid "JSM Non-Breaking Space (nbsp) for French Content"
 msgstr ""
@@ -21,9 +22,7 @@ msgid "https://surniaulula.com/extend/plugins/nbsp-french/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"Adds a non-breaking space (nbsp) between words and punctuation marks to "
-"avoid inappropriate line-breaks in French."
+msgid "Adds a non-breaking space (nbsp) between words and punctuation marks to avoid inappropriate line-breaks in French."
 msgstr ""
 
 #. Author of the plugin/theme
